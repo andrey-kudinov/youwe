@@ -1,0 +1,163 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/mixins';
+@import '@/styles/base/functions';
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+.work-process {
+  background: $thunder;
+  position: relative;
+  overflow: hidden;
+
+  :global {
+    .swiper-button-prev,
+    .swiper-button-next {
+      cursor: pointer;
+      z-index: 1;
+      top: 116%;
+      width: 2.875rem;
+      height: 2.875rem;
+      transition: background .3s;
+      background: $white;
+      box-shadow: 0 0 .875rem rgba(27, 18, 18, .2);
+      border-radius: 0;
+
+      @include breakpoint(sm) {
+        top: -6.5rem;
+      }
+
+      &::before {
+        content: none;
+        color: $thunder;
+      }
+
+      @include outline();
+
+      &:focus {
+        background: $white;
+      }
+
+      &:focus-visible {
+        background: $thunder;
+
+        svg {
+          path {
+            fill: $white;
+            transition: fill .3s;
+          }
+        }
+      }
+
+      &:hover {
+        background: $white;
+
+        svg {
+          path {
+            fill: $thunder;
+          }
+        }
+      }
+
+      @include breakpoint(sm) {
+        &:hover {
+          background: $thunder;
+
+          svg {
+            path {
+              fill: $white;
+              transition: fill .3s;
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-button-prev {
+      left: calc(50% - 4rem);
+
+      @include breakpoint(sm) {
+        left: calc(100% - 14rem);
+      }
+    }
+
+    .swiper-button-next {
+      right: calc(50% - 4rem);
+
+      @include breakpoint(sm) {
+        right: calc(0% + 6.5625rem);
+      }
+    }
+  }
+}
+
+.mobile {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+
+  @include breakpoint(md) {
+    display: none;
+  }
+}
+
+.tablet {
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h2 {
+    margin: 0;
+    color: $white;
+    display: inline;
+  }
+
+  @include breakpoint(sm) {
+    margin-bottom: 60px;
+  }
+
+  @include breakpoint(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 90px;
+  }
+}
+
+.slide {
+  text-align: left;
+  padding: 0 1rem;
+  max-width: 350px;
+  display: block;
+  margin: 0 auto;
+  cursor: grab;
+  user-select: text;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 rem(28);
+  padding: 0 0 2rem;
+  border-bottom: 1px solid $scorpion;
+
+  @include breakpoint(sm) {
+    justify-content: flex-start;
+  }
+}
+
+.title {
+  margin: 0 0 .75rem;
+  color: $white;
+}
+
+.text {
+  color: $nobel;
+  margin: 0;
+}

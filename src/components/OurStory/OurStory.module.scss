@@ -1,0 +1,39 @@
+@import '@/styles/base/functions';
+@import '@/styles/base/breakpoints';
+
+.our-story {
+  display: flex;
+  flex-direction: column;
+  gap: rem(22);
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @include breakpoint(sm) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: 300px 1fr;
+    gap: 32px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: 450px 1fr;
+  }
+}
+
+.heading {
+  max-width: none;
+  margin: 0;
+}
+
+.paragraph {
+  margin: 0;
+
+  &:not(:first-child) {
+    margin-top: rem(12);
+  }
+}

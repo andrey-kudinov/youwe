@@ -1,0 +1,198 @@
+// TODO fix stylelint, format styles
+
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.tabs {
+  margin-bottom: 80px;
+  margin-top: 80px;
+
+  @include breakpoint(lg) {
+    margin-top: 100px;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  font-family: var(--open-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s ease;
+  appearance: none;
+  padding: 8px 10px;
+  border: 2px solid $concrete;
+  background: $concrete;
+  font-size: 1rem;
+  color: $gray;
+  position: relative;
+  text-transform: capitalize;
+
+  &:hover,
+  &:focus-visible {
+    color: $blue-ribbon;
+    background: transparent;
+  }
+}
+
+.count {
+  padding-left: 6px;
+  font-size: rem(14);
+  color: $gray;
+  position: relative;
+  top: -4px;
+}
+
+.active {
+  background: $blue-ribbon;
+  color: $white;
+  font-family: var(--galano);
+  font-weight: 700;
+
+  &:hover,
+  &:focus-visible {
+    background: $blue-ribbon;
+    color: $white;
+  }
+
+  .count {
+    color: $white;
+  }
+}
+
+.tab-list {
+  margin-bottom: 50px;
+}
+
+.tab-list-inner {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $mine-shaft;
+  flex-wrap: wrap;
+
+  @include breakpoint(lg) {
+    flex-wrap: nowrap;
+  }
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.category {
+  padding: 6px 12px;
+  margin: 0;
+  background: $concrete;
+  color: $scorpion;
+  width: fit-content;
+  font-weight: 400;
+}
+
+.title {
+  font-size: rem(26);
+  margin: 22px 0;
+
+  @include breakpoint(lg) {
+    font-size: rem(36);
+  }
+}
+
+.cards {
+  display: flex;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  @include breakpoint(lg) {
+    padding: 0 64px;
+  }
+}
+
+.card {
+  box-shadow: 0 0 20px rgba(17, 12, 17, .15);
+  width: auto;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(lg) {
+    flex-direction: row;
+    width: 49%;
+  }
+}
+
+.main-image {
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+
+  @include breakpoint(lg) {
+    width: 40%;
+    height: auto;
+  }
+
+  span {
+    height: 100% !important; // to change Sanity inline styles
+    position: static !important;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sanity-content {
+  p {
+    margin: 0;
+    color: $mine-shaft;
+    font-family: var(--open-sans);
+    font-size: rem(17);
+    line-height: rem(26);
+  }
+}
+
+.author {
+  margin: 40px 0;
+}
+
+.link {
+  font-size: rem(16);
+  line-height: rem(24);
+  color: $blue-ribbon;
+  width: fit-content;
+  font-family: var(--galano);
+  font-weight: 700;
+  margin-top: auto;
+  cursor: pointer;
+
+  &:focus-visible {
+    color: $thunder;
+  }
+
+  &:hover {
+    color: $thunder;
+  }
+}
+
+.button-wrapper {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint(lg) {
+    margin-top: 100px;
+  }
+}

@@ -1,0 +1,44 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+
+.successContainer {
+  button {
+    width: 100%;
+  }
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 48px;
+  padding: 3.25rem;
+  background: $white;
+  border: 1px solid #b3b3b3;
+
+  @include breakpoint(lg) {
+    margin-top: 0;
+  }
+
+  svg {
+    margin: 0 auto;
+  }
+
+  h4 {
+    margin: 1.875rem 0 1.375rem;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.animation {
+  margin: 0 auto;
+}
+

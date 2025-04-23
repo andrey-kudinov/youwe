@@ -1,0 +1,98 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/functions';
+
+.wrapper {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin: 0 0 0 -50vw;
+  background: $thunder;
+}
+
+.block {
+  position: relative;
+  margin-bottom: 0;
+  padding: 5rem 1.5rem;
+
+  @include breakpoint(sm) {
+    padding: 5rem 3rem;
+  }
+
+  @include breakpoint(md) {
+    padding: 5rem 3.4375rem;
+  }
+
+  @include breakpoint(lg) {
+    padding: 5rem 6.5625rem;
+  }
+
+  h2 {
+    margin: 0 0 1.375rem;
+    text-align: center;
+    color: $white;
+
+    @include breakpoint(sm) {
+      padding: 0;
+    }
+  }
+
+  p {
+    max-width: rem(470);
+    margin: 0 auto 3.25rem;
+    color: $nobel;
+    text-align: center;
+  }
+
+  button {
+    margin: 0 auto;
+  }
+
+  h2,
+  p,
+  button {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.bg,
+.bg-tablet,
+.bg-mobile {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bg {
+  display: none;
+  width: rem(1350);
+
+  @include breakpoint(xl) {
+    display: block;
+  }
+}
+
+.bg-tablet {
+  display: none;
+  width: rem(1133);
+
+  @include breakpoint(lg) {
+    display: block;
+  }
+
+  @include breakpoint(xl) {
+    display: none;
+  }
+}
+
+.bg-mobile {
+  display: block;
+  top: .8rem;
+  transform: translate(-20%);
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+}

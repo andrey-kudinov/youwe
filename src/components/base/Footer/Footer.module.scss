@@ -1,0 +1,233 @@
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/colors';
+@import '@/styles/base/mixins';
+@import '@/styles/base/functions';
+
+.footer {
+  background: $thunder;
+}
+
+.footer-inner {
+  margin-bottom: 0;
+  padding: 0 1.5rem;
+
+  @include breakpoint(sm) {
+    padding: 0 2rem;
+  }
+
+  @include breakpoint(lg) {
+    padding: 0 6.5625rem;
+  }
+}
+
+.top {
+  padding: 4.875rem 0 1.5rem;
+  border-bottom: 1px solid $mine-shaft;
+
+  @include breakpoint(md) {
+    padding: rem(54) 0 rem(48);
+  }
+}
+
+.brand {
+  display: flex;
+  justify-content: flex-start;
+  transition: .3s ease;
+
+  @include outline();
+
+  img {
+    display: block;
+  }
+}
+
+.center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 0;
+
+  @include breakpoint(md) {
+    padding: rem(22) 0 rem(40);
+    border-bottom: 1px solid $mine-shaft;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.description {
+  color: $nobel;
+
+  @include breakpoint(md) {
+    max-width: 18rem;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+}
+
+.item-label {
+  margin-bottom: .25rem;
+  padding-bottom: .5rem;
+  color: $nobel;
+}
+
+.item {
+  width: fit-content;
+  padding-bottom: .25rem;
+  color: $white;
+
+  &:hover {
+    text-decoration: underline;
+    color: $black-haze;
+  }
+}
+
+.email,
+.pages,
+.services {
+  margin-top: rem(30);
+
+  @include breakpoint(sm) {
+    margin-top: 0;
+  }
+}
+
+.pages,
+.services {
+  margin-top: rem(30);
+
+  @include breakpoint(md) {
+    margin-top: 0;
+  }
+}
+
+.description,
+.email {
+  width: 100%;
+
+  @include breakpoint(sm) {
+    width: 48%;
+  }
+
+  @include breakpoint(md) {
+    width: auto;
+  }
+}
+
+.pages,
+.services {
+  width: auto;
+
+  @include breakpoint(sm) {
+    width: 48%;
+  }
+
+  @include breakpoint(md) {
+    width: auto;
+  }
+}
+
+.logos {
+  display: grid;
+  grid-column: 1/-1;
+  grid-row: 4/-1;
+  place-items: center;
+  width: 100%;
+  margin-top: .75rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid $mine-shaft;
+
+  @include breakpoint(sm) {
+    grid-row: 2/-1;
+  }
+
+  @include breakpoint(md) {
+    grid-column: initial;
+    grid-row: initial;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  a {
+    path {
+      transition: .3s ease;
+    }
+
+    &:hover path {
+      fill: $black-haze;
+    }
+  }
+}
+
+.logos-inner {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: min-content min-content;
+  gap: 1.5rem;
+
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(10, auto);
+    grid-template-rows: min-content;
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: min-content min-content;
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+  border-top: 1px solid $mine-shaft;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: rem(46) 0 rem(40);
+    border-top: none;
+  }
+
+  p,
+  a {
+    color: $gray;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+      color: $black-haze;
+    }
+  }
+}
+
+.bottom-right {
+  display: flex;
+  align-items: center;
+  height: 1.25rem;
+
+  a {
+    &:hover {
+      transition: color .3s;
+      color: $black-haze;
+    }
+
+    &:first-child {
+      margin-right: 1.25rem;
+      padding-right: 1.25rem;
+      border-right: 1px solid $gray;
+    }
+  }
+}

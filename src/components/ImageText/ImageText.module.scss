@@ -1,0 +1,87 @@
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.wrapper {
+  background-color: $athens-gray;
+  padding: 40px 0;
+
+  @include breakpoint(md) {
+    padding: 74px 0;
+  }
+}
+
+.image-with-text {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+  }
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  img {
+    max-height: rem(236);
+    margin-bottom: 40px;
+
+    @include breakpoint(sm) {
+      max-height: rem(376);
+    }
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint(md) {
+    width: 50%;
+  }
+}
+
+.image-on-right {
+  .text {
+    @include breakpoint(md) {
+      padding: 16px 70px 0 16px;
+    }
+  }
+
+  @include breakpoint(md) {
+    flex-direction: row-reverse;
+  }
+}
+
+.title {
+  margin: 0 0 20px;
+  font-family: var(--galano);
+  font-weight: 400;
+  color: $mine-shaft;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+
+  p {
+    max-width: 100%;
+    margin: 0;
+    color: $mine-shaft;
+
+    @include breakpoint(md) {
+      max-width: rem(432);
+    }
+  }
+
+  @include breakpoint(md) {
+    width: 50%;
+    padding: 16px 0 16px 70px;
+  }
+}

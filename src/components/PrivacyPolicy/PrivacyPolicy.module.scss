@@ -1,0 +1,20 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/mixins';
+@import '@/styles/base/functions';
+
+.content {
+  padding: 16px 0 48px;
+
+  h1 {
+    line-height: 1.2;
+  }
+
+  div {
+    text-align: justify;
+  }
+
+  @include breakpoint(lg) {
+    padding: 60px 0;
+  }
+}

@@ -1,0 +1,58 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/mixins';
+@import '@/styles/base/functions';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 64px;
+  gap: 24px;
+  width: 100%;
+
+  @include breakpoint(sm) {
+    margin-top: 0;
+  }
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 16px;
+  width: 100%;
+
+  button {
+    width: 100%;
+  }
+}
+
+.alternative {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 36px;
+}
+
+.label {
+  margin: 0;
+  padding: .3rem 0;
+  text-transform: none;
+  color: $thunder;
+}
+
+.email {
+  margin: 4px 0 0;
+
+  span {
+    color: $scorpion;
+  }
+
+  a {
+    @include outline();
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

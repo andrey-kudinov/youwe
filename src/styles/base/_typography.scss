@@ -1,0 +1,173 @@
+@import 'breakpoints';
+@import 'colors';
+@import 'mixins';
+@import 'functions';
+
+.display1 {
+  font-family: var(--galano);
+  font-size: 2.25rem;
+  line-height: 2.875rem;
+  color: $thunder;
+  font-weight: 800;
+
+  @include breakpoint(sm) {
+    font-size: 3rem;
+    line-height: 3.625rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 3.625rem;
+    line-height: 4.25rem;
+  }
+}
+
+.headline1 {
+  font-family: var(--galano);
+  font-size: rem(32);
+  line-height: 1.2;
+  color: $thunder;
+
+  @include breakpoint(sm) {
+    font-size: rem(40);
+  }
+
+  @include breakpoint(lg) {
+    font-size: rem(48);
+  }
+}
+
+.headline2 {
+  font-family: var(--galano);
+  font-size: rem(30);
+  line-height: 1.3;
+  color: $thunder;
+
+  @include breakpoint(sm) {
+    font-size: rem(34);
+  }
+}
+
+.headline3 {
+  font-family: var(--galano);
+  font-size: rem(24);
+  line-height: 1.5;
+  color: $thunder;
+  font-weight: 600;
+
+  @include breakpoint(md) {
+    font-size: rem(28);
+  }
+}
+
+.headline4 {
+  color: $thunder;
+  font-family: var(--galano);
+  font-size: rem(18);
+  line-height: 1.5;
+  letter-spacing: .15px;
+  font-weight: 600;
+
+  @include breakpoint(md) {
+    font-size: rem(20);
+  }
+}
+
+.display1 {
+  font-family: var(--galano);
+  font-size: 2.25rem;
+  line-height: 2.875rem;
+  font-weight: 800;
+
+  @include breakpoint(lg) {
+    font-size: 3.625rem;
+    line-height: 4.25rem;
+  }
+}
+
+.display2 {
+  font-family: var(--galano);
+  font-size: 2rem;
+  line-height: 2.3rem;
+  color: $thunder;
+  font-weight: 800;
+
+  @include breakpoint(xs) {
+    font-size: 2.25rem;
+    line-height: 2.875rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 3rem;
+    line-height: 3.625rem;
+  }
+}
+
+.subheadline1 {
+  text-transform: uppercase;
+  color: $mine-shaft;
+  font-family: var(--open-sans);
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+.subheadline2 {
+  text-transform: uppercase;
+  color: $white;
+  font-family: var(--galano);
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  font-weight: 700;
+}
+
+.subheadline3 {
+  text-transform: uppercase;
+  color: $thunder;
+  font-family: var(--open-sans);
+  font-size: .875rem;
+  line-height: 1.5;
+  font-weight: 800;
+}
+
+.paragraph1 {
+  color: $thunder;
+  font-family: var(--open-sans);
+  font-size: 1.0625rem;
+  line-height: 1.625rem;
+}
+
+.paragraph2 {
+  color: $thunder;
+  font-family: var(--galano);
+  font-size: .875rem;
+  line-height: 1rem;
+}
+
+.label {
+  color: $thunder;
+  font-family: var(--open-sans);
+  font-size: .875rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.caption {
+  color: $thunder;
+  font-family: var(--open-sans);
+  font-size: .6875rem;
+  line-height: 1rem;
+}
+
+.color-subtitle {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 8px;
+  text-transform: uppercase;
+  color: $blue-ribbon;
+  background-color: $blue-ribbon;
+  background-image: linear-gradient(90deg, $blue-ribbon 0%, $carnation 100%);
+  background-repeat: repeat;
+  background-clip: text;
+  background-size: 100%;
+  -webkit-text-fill-color: transparent;
+}

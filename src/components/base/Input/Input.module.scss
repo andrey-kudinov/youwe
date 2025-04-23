@@ -1,0 +1,64 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/typography';
+@import '@/styles/base/mixins';
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: .25rem;
+
+  &:not(:first-of-type) {
+    margin-top: 2rem;
+  }
+}
+
+.input {
+  appearance: none;
+  padding: .375rem .375rem .375rem 0;
+  color: $thunder;
+  border: transparent;
+  border-bottom: 1px solid $nobel;
+  background: $athens-gray;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0;
+
+  &:focus {
+    border-bottom: 1px solid $thunder;
+    outline: none;
+  }
+
+  &::placeholder {
+    text-transform: none;
+    color: $gray;
+    font-family: var(--galano);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.transparent {
+  background: transparent;
+}
+
+.error-message {
+  margin: .25rem 0 0;
+  color: $flamingo;
+  font-size: .75rem;
+}
+
+.fill {
+  border-bottom: 1px solid $thunder;
+}
+
+.error {
+  border-bottom: 1px solid $flamingo;
+
+  &:focus {
+    border-bottom: 1px solid $flamingo;
+  }
+}
+

@@ -1,0 +1,73 @@
+@import '@/styles/base/mixins';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/colors';
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.company-overview {
+  margin-top: rem(80);
+  margin-bottom: rem(80);
+  background-color: $white;
+
+  @include breakpoint(lg) {
+    margin-top: rem(120);
+    margin-bottom: rem(120);
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: rem(40);
+
+  @include breakpoint(md) {
+    margin-bottom: rem(80);
+  }
+}
+
+.heading {
+  margin: 0;
+  padding-left: rem(24);
+  padding-right: rem(24);
+  max-width: rem(327);
+  font-family: var(--galano);
+  text-align: center;
+  font-size: rem(28);
+  line-height: rem(34);
+  color: $thunder;
+
+  @include breakpoint(md) {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: rem(845);
+    font-size: rem(36);
+    line-height: rem(43);
+  }
+
+  @include breakpoint(xl) {
+    font-size: rem(46);
+    line-height: rem(55);
+  }
+}
+
+.eyebrow {
+  order: -1;
+}
+
+.list {
+  @include reset-list();
+  display: flex;
+  flex-direction: column;
+  gap: rem(80);
+
+  @include breakpoint(md) {
+    width: rem(786);
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}

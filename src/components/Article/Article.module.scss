@@ -1,0 +1,367 @@
+@import '@/styles/base/typography';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/mixins';
+
+.article {
+  font-family: var(--open-sans);
+
+  section {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  ul,
+  ol {
+    @include reset-list ();
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-family: var(--galano);
+  }
+}
+
+.hero {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-family: var(--galano);
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+  background: linear-gradient(126.37deg, rgba(71, 68, 253, .8) 0%, rgba(251, 123, 185, .8) 119.71%);
+
+  @include breakpoint(lg) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  a {
+    display: inline-flex;
+    gap: 10px;
+
+    svg {
+      fill: $white;
+    }
+
+    span {
+      padding-bottom: 4px;
+      border-bottom: 1px solid $white;
+    }
+
+    &:hover {
+      span {
+        border-color: transparent;
+      }
+    }
+  }
+
+  h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 36px;
+    line-height: 43px;
+
+    @include breakpoint(lg) {
+      max-width: 985px;
+      font-size: 80px;
+      line-height: 96px;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 15px;
+
+    li {
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 16px;
+      color: $scorpion;
+      background-color: $concrete;
+    }
+  }
+}
+
+.author {
+  max-width: 980px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  @include breakpoint(lg) {
+    margin-top: 80px;
+  }
+}
+
+.main {
+  max-width: 980px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 17px;
+  line-height: 26px;
+  color: $thunder;
+
+  @include breakpoint(lg) {
+    margin-bottom: 80px;
+  }
+
+  section {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-top: 15px;
+  }
+
+  ul {
+    margin: 15px 0;
+
+    li {
+      padding-left: 30px;
+      background-image: url('/icons/arrow-right.svg');
+      background-repeat: no-repeat;
+      background-position: 10px 10px;
+
+      + li {
+        margin-top: 15px;
+      }
+    }
+
+    + ul {
+      margin-top: 15px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    color: $blue-ribbon;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  blockquote {
+    margin: 0;
+    margin-top: 20px;
+    padding-left: 50px;
+    font-family: var(--galano);
+    font-size: 14px;
+    line-height: 16px;
+    color: $gray;
+    background-image: url('/icons/chevron-right-blue.svg');
+    background-repeat: no-repeat;
+    font-style: italic;
+  }
+
+  .code {
+    pre {
+      display: block;
+      margin: 15px 0;
+      padding: 15px 20px;
+      font-size: 14px;
+      line-height: 18px;
+      background-color: $athens-gray;
+      border: 1px solid $nobel;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+  }
+
+  .table {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0;
+      margin-bottom: 5px;
+      font-family: var(--galano);
+      font-size: 22px;
+      line-height: 26px;
+      text-align: left;
+    }
+
+    div {
+      margin-left: 100px;
+      padding-bottom: 20px;
+      overflow-x: auto;
+
+      @include breakpoint(md) {
+        margin-left: 150px;
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+
+      tr,
+      tr:first-of-type td:nth-of-type(1) {
+        background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='0' y1='calc(100% - 0px)' x2='100%' y2='calc(100% - 0px)' stroke='black' stroke-dasharray='3' /></svg>");
+      }
+
+      td {
+        box-sizing: border-box;
+        min-width: 100px;
+        text-align: center;
+        padding: 24px;
+        font-family: var(--galano);
+        font-size: 14px;
+        line-height: 17px;
+        color: $gray;
+
+        @include breakpoint(md) {
+          min-width: 150px;
+        }
+
+        &:nth-of-type(1) {
+          position: absolute;
+          left: 0;
+          white-space: nowrap;
+          padding: 24px 0;
+          text-align: left;
+
+          @include breakpoint(md) {
+            padding: 24px;
+            text-align: center;
+          }
+        }
+      }
+
+      tr:first-of-type td,
+      tr td:first-of-type {
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $mine-shaft;
+        font-family: var(--open-sans);
+      }
+    }
+  }
+
+  .gallery {
+    figure {
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      figcaption {
+        padding-left: 50px;
+        font-family: var(--galano);
+        font-size: 14px;
+        line-height: 16px;
+        color: $gray;
+        background-image: url('/icons/chevron-right-blue.svg');
+        background-repeat: no-repeat;
+      }
+    }
+
+    .multiple {
+      ol {
+        display: grid;
+        gap: 10px;
+
+        @include breakpoint(md) {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .contents {
+    counter-reset: list;
+
+    p {
+      display: none;
+    }
+
+    ul {
+      margin-top: 0;
+
+      &:first-of-type {
+        margin-top: 30px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 20px;
+      }
+
+      li {
+        padding: 0;
+        background: none;
+
+        &::before {
+          content: counter(list, decimal) '. ';
+          counter-increment: list;
+        }
+      }
+    }
+  }
+}
+
+.social {
+  margin-top: 40px;
+  margin-bottom: 60px;
+
+  @include breakpoint(lg) {
+    max-width: 980px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    @include breakpoint(lg) {
+      justify-content: flex-start;
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    box-shadow: 0 0 14px rgba(27, 18, 18, .1);
+
+    &:hover {
+      path {
+        fill: $blue-ribbon;
+      }
+    }
+  }
+}

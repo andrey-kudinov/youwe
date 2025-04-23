@@ -1,8 +1,33 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-  swcMinify: true,
-  images: { domains: ['cdn.sanity.io'] },
-}
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            prettier: false,
+            svgo: true,
+            svgoConfig: {
+              plugins: [
+                {
+                  name: 'removeViewBox',
+                  active: false,
+                },
+              ],
+            },
+            titleProp: true,
+          },
+        },
+        'url-loader',
+      ],
+    });
 
-module.exports = nextConfig
+    return config;
+  },
+  images: {
+    loader: 'custom',
+    loaderFile: './cloudinary-loader.js',
+  },
+};

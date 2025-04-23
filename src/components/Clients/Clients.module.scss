@@ -1,0 +1,121 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/typography';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/mixins';
+@import '@/styles/base/functions';
+
+.wrapper {
+  position: relative;
+  background: $thunder;
+  padding: 0;
+}
+
+.clients {
+  padding: 2.5rem 0;
+
+  h2 {
+    margin: 0 0 2rem;
+    text-align: center;
+    color: $white;
+
+    @include breakpoint(sm) {
+      margin: 0 0 3rem;
+    }
+  }
+
+  @include breakpoint(md) {
+    padding: 3.5rem 0;
+  }
+}
+
+.lines {
+  overflow: hidden;
+}
+
+.first-line,
+.second-line,
+.third-line {
+  display: flex;
+
+
+  // TODO: Reverse is used to prevent animation getting stuck on
+  // iOS safari and chrome. Remove when fixed.
+  animation: scrolling 10s reverse linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+
+  @include breakpoint(md) {
+    animation: scrolling 35s linear infinite;
+  }
+
+  @include breakpoint(xxl) {
+    animation: scrolling 50s linear infinite;
+  }
+}
+
+.second-line {
+  margin: 2.5rem 0;
+  animation: scrolling 20s reverse linear infinite;
+
+  @include breakpoint(sm) {
+    margin: 3.75rem 0 0;
+  }
+
+  @include breakpoint(md) {
+    animation: scrolling 35s reverse linear infinite;
+  }
+
+  @include breakpoint(xxl) {
+    animation: scrolling 50s reverse linear infinite;
+  }
+}
+
+.third-line {
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+
+.client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 .5rem;
+  cursor: pointer;
+  transform: scale(.8);
+
+  img {
+    width: auto;
+
+    &:hover {
+      filter: brightness(1.5) drop-shadow(0 0 3px $white);
+    }
+  }
+
+  @include breakpoint(sm) {
+    margin: 0 2rem;
+    transform: none;
+  }
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  98% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+}

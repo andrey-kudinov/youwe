@@ -1,0 +1,84 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/typography';
+@import '@/styles/base/mixins';
+@import '@/styles/base/breakpoints';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.625rem;
+  min-width: 8.6875rem;
+  font-family: var(--galano);
+  font-weight: 700;
+  cursor: pointer;
+  transition: .3s ease;
+  line-height: 1rem;
+  appearance: none;
+  text-transform: none;
+
+  &.primary {
+    padding: 1rem 1.5rem;
+    border: 2px solid $blue-ribbon;
+    background: $blue-ribbon;
+    font-size: 1.125rem;
+
+    &:hover,
+    &:focus-visible {
+      color: $blue-ribbon;
+      background: transparent;
+
+      path {
+        fill: $blue-ribbon;
+      }
+    }
+  }
+
+  &.secondary {
+    padding: .625rem .75rem;
+    border: 2px solid $thunder;
+    background: $thunder;
+
+    &:hover,
+    &:focus-visible {
+      color: $thunder;
+      background: transparent;
+
+      path {
+        fill: $thunder;
+      }
+    }
+  }
+
+  @include outline();
+
+  @include breakpoint(xs) {
+    width: fit-content;
+  }
+
+  path {
+    transition: .3s ease;
+  }
+
+  svg {
+    margin-right: .625rem;
+  }
+
+  span {
+    padding-top: .15rem;
+  }
+
+  &.reverse {
+    span {
+      order: -1;
+    }
+
+    svg {
+      margin: 0 0 0 .5rem;
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+}

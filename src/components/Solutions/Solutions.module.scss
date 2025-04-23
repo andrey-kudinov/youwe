@@ -1,0 +1,100 @@
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/colors';
+@import '@/styles/base/functions';
+
+.wrapper {
+  padding: 80px 0;
+  background: $athens-gray;
+}
+
+.block {
+  margin: 0 auto;
+
+  h2 {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    text-align: left;
+
+    @include breakpoint(sm) {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+  }
+
+  > p {
+    margin-left: 0;
+
+    @include breakpoint(sm) {
+      margin-left: auto;
+    }
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint(xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.two-column {
+  grid-template-columns: 1fr;
+
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(2, minmax(20rem, rem(387)));
+  }
+}
+
+.item {
+  &::before {
+    content: '</>';
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $blue-ribbon;
+  }
+  border: 1px solid $nobel;
+  background-color: $white;
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(30px);
+
+  h4 {
+    margin: 0 0 16px;
+    color: $thunder;
+  }
+
+  p {
+    margin: 0;
+    color: $scorpion;
+  }
+}
+
+.visible {
+  .item {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+
+    // Delay transition by 100ms for each item
+    @for $i from 1 through 9 {
+      &:nth-child(#{$i}) {
+        transition-delay: 100ms * $i;
+      }
+    }
+  }
+}

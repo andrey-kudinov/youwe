@@ -1,0 +1,130 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/functions';
+
+.hero-block {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* stylelint-disable */
+  height: calc(100vh - 6.5rem); /* Fallback */
+  height: calc(var(--vh, 1vh) * 100 - 6.5rem);
+  /* stylelint-enable */
+  margin: 0;
+
+  @include breakpoint(sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    height: auto;
+    min-height: auto;
+    margin: 4rem 0 0;
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.main {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+
+  @include breakpoint(sm) {
+    padding-top: 0;
+  }
+
+  h2 {
+    margin: 0 0 3.25rem;
+    letter-spacing: -1px;
+
+    @include breakpoint(sm) {
+      max-width: rem(574);
+      margin-bottom: 1.375rem;
+    }
+  }
+
+  button {
+    width: 100%;
+
+    @include breakpoint(sm) {
+      width: auto;
+    }
+  }
+}
+
+.description {
+  display: none;
+  max-width: 31.625rem;
+  margin: 0 0 3.25rem;
+  color: $mine-shaft;
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+}
+
+.checkboxes {
+  display: none;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.25rem;
+
+  @include breakpoint(sm) {
+    display: flex;
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-right: 1.75rem;
+  }
+
+  svg {
+    margin-right: .25rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.animation {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  max-height: 50vh;
+  margin: auto 0 auto -50vw;
+  order: -1;
+
+  @include breakpoint(sm) {
+    width: inherit;
+    max-height: none;
+    margin: 0;
+    position: static;
+    left: 0;
+    order: 0;
+  }
+
+  @include breakpoint(md) {
+    width: rem(490);
+    height: rem(500);
+  }
+
+  @include breakpoint(lg) {
+    width: rem(510);
+    height: rem(520);
+  }
+}
+
+.small-display {
+  max-height: none;
+}

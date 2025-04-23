@@ -1,0 +1,164 @@
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/colors';
+@import '@/styles/base/functions';
+
+.hero-block {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* stylelint-disable */
+  height: calc(100vh - 6.5rem); /* Fallback */
+  height: calc(var(--vh, 1vh) * 100 - 6.5rem);
+  /* stylelint-enable */
+  margin-bottom: 5rem;
+
+  @include breakpoint(sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    height: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 0 3rem;
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 rem(55);
+  }
+
+  @include breakpoint(lg) {
+    gap: 4rem;
+    padding: 0 2.2625rem 0 6.5625rem;
+  }
+}
+
+.main {
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  justify-content: center;
+
+  @include breakpoint(sm) {
+    padding-top: 0;
+  }
+
+  h2 {
+    max-width: 35.875rem;
+    margin: 0 0 2.5rem;
+    letter-spacing: -1px;
+
+    @include breakpoint(sm) {
+      margin-bottom: 1.375rem;
+    }
+  }
+
+  button {
+    width: 100%;
+
+    @include breakpoint(sm) {
+      width: auto;
+      margin-bottom: rem(100);
+    }
+  }
+}
+
+.small-mobile-title {
+  h2 {
+    font-size: 2rem;
+
+    @include breakpoint(sm) {
+      font-size: rem(36);
+    }
+
+    @include breakpoint(md) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.text {
+  display: none;
+  max-width: 31.625rem;
+  margin-top: 0;
+  margin-bottom: 3.25rem;
+  color: $mine-shaft;
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+}
+
+.subtitle {
+  display: none;
+  order: -1;
+  margin: rem(80) 0 rem(22);
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+}
+
+.animation {
+  position: relative;
+  left: 50%;
+  order: -1;
+  width: 100vw;
+  max-height: 47vh;
+  margin: auto 0 auto -50vw;
+
+  @include breakpoint(sm) {
+    position: static;
+    max-height: none;
+    left: 0;
+    order: 0;
+    width: inherit;
+    margin: 0;
+  }
+
+  @include breakpoint(xl) {
+    max-width: rem(510);
+    max-height: rem(520);
+    min-height: 32.5rem;
+    margin-top: rem(30);
+    margin-right: rem(-55);
+  }
+}
+
+.grid {
+  position: absolute;
+  max-height: 50vh;
+  z-index: -1;
+  right: 0;
+  bottom: 30%;
+  left: -5rem;
+
+  @include breakpoint(sm) {
+    top: 0;
+    bottom: auto;
+    left: auto;
+    max-width: 50%;
+    max-height: none;
+
+    svg {
+      width: auto !important;
+    }
+  }
+
+  @include breakpoint(lg) {
+    svg {
+      width: 100% !important;
+    }
+  }
+
+  @include breakpoint(xl) {
+    top: rem(20);
+  }
+}
+
+.small-display {
+  max-height: none;
+}

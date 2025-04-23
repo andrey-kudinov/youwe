@@ -1,0 +1,240 @@
+@import '@/styles/base/colors';
+
+@import '@/styles/base/breakpoints';
+
+.services {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin: 5rem 0 0 -50vw;
+  padding: 4rem 0 6.5rem;
+  background: $athens-gray;
+
+  @include breakpoint(md) {
+    padding: 5rem 0 2.5rem;
+    margin: 0 0 2.5rem -50vw;
+  }
+
+  h4 {
+    margin: 0 auto 1.625rem;
+    color: $thunder;
+    text-align: center;
+
+    @include breakpoint(md) {
+      margin: 0 0 2.5rem;
+    }
+
+    @include breakpoint(xl) {
+      margin: 0;
+    }
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    @include breakpoint(xl) {
+      flex-direction: row;
+    }
+  }
+}
+
+.transparent {
+  background: transparent;
+}
+
+.slider {
+  max-width: 100%;
+  margin: auto;
+
+  @include breakpoint(md) {
+    max-width: 55.75rem;
+
+
+    > div {
+      margin: 0 6rem;
+    }
+  }
+
+  @include breakpoint(xl) {
+    margin: 0;
+  }
+}
+
+.slide {
+  position: relative;
+  bottom: 1rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 7.875rem auto;
+  max-width: fit-content;
+  min-height: 13.125rem;
+  margin: 1rem auto 1.75rem;
+  padding: 2.375rem 1.5rem 1.5rem;
+  background: $white;
+  box-shadow: .25rem .5rem 1.25rem rgba(27, 18, 18, .1);
+  grid-gap: 2rem;
+
+  @include breakpoint(md) {
+    grid-template-columns: 9.125rem auto;
+    grid-template-rows: auto;
+    max-width: 38.5rem;
+    padding: 1.5rem 3rem;
+    box-shadow: -.375rem .5rem 1.25rem rgba(27, 18, 18, .1);
+  }
+}
+
+.slider-bar {
+  bottom: -.5rem;
+
+  @include breakpoint(md) {
+    bottom: 0;
+  }
+
+  li {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+.slick-dot {
+  display: block;
+  width: .5rem;
+  height: .5rem;
+  transition: background-color 1s;
+  background-color: $nobel;
+}
+
+.slick-active {
+  position: relative;
+  top: .188rem;
+  width: .875rem;
+  height: .875rem;
+  background-color: $thunder;
+}
+
+.custom-slick-prev,
+.custom-slick-next {
+  z-index: 1;
+  top: 100%;
+  width: 2.875rem;
+  height: 2.875rem;
+  background: $white;
+  box-shadow: 0 0 .875rem rgba(27, 18, 18, .2);
+  transition: all .3s;
+
+  @include breakpoint(md) {
+    top: 1.5rem;
+  }
+
+  &::before {
+    content: none;
+    opacity: 1 !important;
+    color: $thunder;
+  }
+
+  &:focus {
+    opacity: 1;
+    color: $thunder;
+    background: $white;
+  }
+
+  svg {
+    path {
+      transition: fill .3s;
+      fill: $thunder;
+    }
+  }
+
+  &:hover,
+  &:active {
+    opacity: 1;
+
+    svg {
+      path {
+        transition: fill .3s;
+      }
+    }
+  }
+
+  &:hover {
+    background: $black;
+
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  &:active {
+    background: $white;
+
+    svg {
+      path {
+        fill: $nobel;
+      }
+    }
+  }
+}
+
+.custom-slick-prev {
+  left: calc(50% - 8rem);
+
+  @include breakpoint(md) {
+    left: 0;
+  }
+}
+
+.custom-slick-next {
+  right: calc(50% - 8rem);
+
+  @include breakpoint(md) {
+    right: 0;
+  }
+}
+
+.custom-slick-extreme {
+  svg {
+    path {
+      fill: $nobel;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+  @include breakpoint(md) {
+    text-align: left;
+  }
+}
+
+.heading {
+  text-transform: capitalize;
+  margin: 0 0 .75rem;
+  color: $mine-shaft;
+}
+
+.description {
+  margin: 0 0 1.375rem;
+  color: $scorpion;
+}
+
+.link {
+  display: block;
+  cursor: pointer;
+  transition: .3s ease;
+  text-transform: capitalize;
+  color: $blue-ribbon;
+
+  &:hover {
+    transition: .3s ease;
+    color: $thunder;
+  }
+}

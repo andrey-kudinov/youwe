@@ -1,0 +1,277 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/functions';
+@import '@/styles/base/typography';
+
+.departments {
+  @include reset-list();
+  display: flex;
+  flex-direction: column;
+
+  // @include breakpoint(md) {
+  //   margin-bottom: rem(80);
+  // }
+
+  // @include breakpoint(xl) {
+  //   margin-bottom: rem(32);
+  // }
+}
+
+.department {
+  margin-bottom: 48px;
+
+  &:hover,
+  &:focus-within {
+    .label {
+      color: $thunder;
+    }
+  }
+
+  @include breakpoint(md) {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 0;
+    gap: 48px;
+    margin-bottom: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='0%' y1='0' x2='100%' y2='0' stroke='%23B3B3B3' stroke-dasharray='5' /></svg>");
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      display: none;
+      bottom: 0;
+    }
+
+    // &:hover {
+    //   &::before,
+    //   &::after {
+    //     background-image: none;
+    //   }
+    // }
+
+    &:nth-last-of-type(1) {
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+.label {
+  color: $mine-shaft;
+  margin-bottom: 20px;
+  margin-top: 0;
+
+  @include breakpoint(md) {
+    margin: 0;
+    width: 150px;
+    padding-top: 32px;
+    line-height: rem(26);
+  }
+
+  @include breakpoint(xl) {
+    display: flex;
+  }
+}
+
+.positions {
+  @include reset-list();
+  position: relative;
+  flex-grow: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='0%' y1='0' x2='100%' y2='0' stroke='%23B3B3B3' stroke-dasharray='5' /></svg>");
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  @include breakpoint(md) {
+    position: static;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.title {
+  display: block;
+  width: 100%;
+  margin: 0;
+  margin-bottom: rem(6);
+  font-family: var(--galano);
+  font-weight: 600;
+  text-align: left;
+  font-size: rem(22);
+  line-height: rem(26);
+  color: $mine-shaft;
+  transition: all ease-in-out .1s;
+
+  @include breakpoint(md) {
+    margin-bottom: rem(0);
+  }
+
+  @include breakpoint(xl) {
+    font-size: rem(26);
+    line-height: rem(30);
+  }
+}
+
+.position {
+  @include reset-button();
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 16px 24px 16px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='0%' y1='0' x2='100%' y2='0' stroke='%23B3B3B3' stroke-dasharray='5' /></svg>");
+  }
+
+  li:last-child > & {
+    &::after {
+      display: none;
+    }
+  }
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    align-items: center;
+    padding: 32px 120px 32px 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+
+    .title {
+      color: $blue-ribbon;
+    }
+
+    .tags {
+      color: $thunder;
+    }
+
+    @include breakpoint(md) {
+      .cta {
+        @include breakpoint(md) {
+          max-width: 100px;
+        }
+      }
+    }
+
+    .icon {
+      @include breakpoint(md) {
+        .arrows {
+          opacity: 1;
+        }
+
+        .current {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.tags {
+  display: flex;
+  justify-content: space-between;
+  gap: rem(12);
+  margin: 0;
+  font-family: var(--galano);
+  font-size: rem(14);
+  line-height: rem(16);
+  color: $gray;
+  transition: all ease-in-out .2s;
+
+  @include breakpoint(md) {
+    margin-bottom: rem(0);
+  }
+}
+
+.cta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  max-width: 16px;
+  height: 100%;
+  overflow: hidden;
+  transition: all ease-in-out .2s;
+
+  @include breakpoint(md) {
+    right: 0;
+  }
+}
+
+.cta-content {
+  min-width: rem(100);
+  display: flex;
+  align-items: center;
+}
+
+.cta-text {
+  font-family: var(--open-sans);
+  font-weight: 700;
+  font-size: rem(17);
+  line-height: rem(23);
+  color: $blue-ribbon;
+}
+
+.icon {
+  margin-right: rem(14);
+  position: relative;
+
+  .arrows,
+  .current {
+    transition: all ease-in-out .2s;
+  }
+
+  .arrows {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

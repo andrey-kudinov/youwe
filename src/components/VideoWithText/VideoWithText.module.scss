@@ -1,0 +1,25 @@
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.wrapper {
+  background-color: $athens-gray;
+  padding: 80px 16px 40px;
+
+  @include breakpoint(md) {
+    padding: 80px 16px;
+  }
+}
+
+.video-with-text {
+  max-width: rem(840);
+  margin: auto;
+}
+
+.video {
+  object-fit: cover !important;
+}
+
+.text {
+  margin: 20px 0 0;
+  color: $mine-shaft;
+}

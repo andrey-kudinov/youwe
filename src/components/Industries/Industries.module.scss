@@ -1,0 +1,140 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+
+.wrapper {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin: 0 0 0 -50vw;
+  background: $thunder;
+}
+
+.industries {
+  margin-bottom: 0;
+  padding: 5rem 0;
+
+  @include breakpoint(sm) {
+    padding: 5rem 3rem;
+  }
+
+  @include breakpoint(md) {
+    padding: 5rem 3.4375rem;
+  }
+
+  @include breakpoint(lg) {
+    padding: 5rem 6.5625rem;
+  }
+
+  h2 {
+    margin: 0 0 2.5rem;
+    padding: 0 1.5rem;
+    text-align: center;
+    color: $white;
+
+    @include breakpoint(sm) {
+      padding: 0;
+    }
+  }
+}
+
+.list {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 2rem 0;
+  list-style: none;
+  border-top: 1px solid $mine-shaft;
+  border-bottom: 1px solid $mine-shaft;
+
+  @include breakpoint(sm) {
+    display: flex;
+  }
+
+  li {
+    display: flex;
+    padding: 1.25rem 0;
+    align-items: center;
+    flex-shrink: 0;
+    color: $concrete;
+
+    &:first-child {
+      svg {
+        &:first-of-type {
+          display: none;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      svg {
+        &:last-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+
+  svg {
+    margin: 0 1.375rem;
+  }
+}
+
+.mobile {
+  display: block;
+  overflow: hidden;
+  padding: 2rem 0;
+  border-top: 1px solid $mine-shaft;
+  border-bottom: 1px solid $mine-shaft;
+
+  @include breakpoint(sm) {
+    display: none;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: 1.25rem 0;
+    flex-shrink: 0;
+    color: $concrete;
+  }
+
+  svg {
+    margin: 0 1.375rem;
+  }
+}
+
+.first-line,
+.second-line,
+.third-line {
+  display: flex;
+  animation: scrolling 20s linear infinite;
+}
+
+.second-line {
+  animation: scrolling 20s reverse linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  98% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+}

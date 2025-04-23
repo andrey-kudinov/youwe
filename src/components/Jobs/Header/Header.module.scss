@@ -1,0 +1,62 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/functions';
+@import '@/styles/base/typography';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+
+  @include breakpoint(md) {
+    padding: 0;
+  }
+
+  @include breakpoint(lg) {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+.heading {
+  margin: 0;
+  margin-bottom: rem(22);
+  font-family: var(--galano);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: $thunder;
+
+  @include breakpoint(lg) {
+    width: rem(467);
+    font-size: 2.25rem;
+  }
+
+  @include breakpoint(xl) {
+    width: rem(562);
+    font-size: 2.875rem;
+  }
+}
+
+.eyebrow {
+  order: -1;
+  margin: 0;
+  margin-bottom: rem(22);
+
+  @include breakpoint(lg) {
+    width: 100%;
+    background-image: linear-gradient(90deg, #4343ff 0%, #f96d6d 10%);
+  }
+}
+
+.paragraph {
+  margin: 0;
+  color: $thunder;
+
+  @include breakpoint(lg) {
+    width: rem(430);
+  }
+
+  @include breakpoint(xl) {
+    width: rem(470);
+  }
+}

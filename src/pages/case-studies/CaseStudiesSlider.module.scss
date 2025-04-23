@@ -1,0 +1,180 @@
+// TODO fix stylelint, format styles
+
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.slider {
+  padding: 32px 0 10px;
+  position: relative;
+  user-select: none;
+  background-color: $athens-gray;
+
+  // Swiper library overrides
+  /* stylelint-disable selector-pseudo-class-no-unknown */
+  :global {
+    .swiper {
+      position: static;
+      padding: 30px 0 26px;
+
+      @include breakpoint(lg) {
+        padding: 32px 0;
+      }
+    }
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+
+    .swiper-slide {
+      width: auto;
+    }
+
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active {
+      :local(.slide) {
+        position: relative;
+        z-index: 1;
+        transform: scale(110%);
+        opacity: 1;
+
+        @include breakpoint(sm) {
+          transform: scale(106%);
+        }
+
+        @include breakpoint(lg) {
+          transform: scale(108%);
+        }
+      }
+    }
+
+    .swiper-case-studies-pagination {
+      width: auto;
+    }
+
+    .swiper-pagination {
+      position: relative;
+      margin-top: 24px;
+    }
+
+    .swiper-pagination-bullets {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: $scorpion;
+      border-radius: 0;
+      width: rem(8);
+      height: rem(8);
+      transition: all .3s ease-in-out;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $thunder;
+      border-color: $thunder;
+      width: rem(14);
+      height: rem(14);
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      appearance: none;
+      cursor: pointer;
+      z-index: 1;
+      top: 100%;
+      min-width: rem(40);
+      width: rem(40);
+      height: rem(40);
+      transition: background .3s;
+      background: $white;
+      box-shadow: 0 0 .875rem rgba(27, 18, 18, .2);
+      padding: 0;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(lg) {
+        position: absolute;
+        top: calc(50% - rem(58));
+        width: rem(60);
+        height: rem(60);
+      }
+
+      &::before {
+        content: none;
+        color: $thunder;
+      }
+
+      &:hover,
+      &:focus-visible {
+        outline: none;
+        color: $thunder;
+        background: $thunder;
+        transition: background .3s;
+
+        svg {
+          path {
+            fill: $white;
+            transition: fill .3s;
+          }
+        }
+      }
+    }
+
+    .swiper-button-prev {
+      @include breakpoint(lg) {
+        left: calc(50% - rem(476));
+      }
+    }
+
+    .swiper-button-next {
+      @include breakpoint(lg) {
+        right: calc(50% - rem(476));
+      }
+    }
+  }
+
+  @include breakpoint(lg) {
+    padding: 32px 0 28px;
+  }
+}
+
+.slide {
+  cursor: grab;
+  position: relative;
+  display: grid;
+  transition: opacity 1s, transform 1s;
+  opacity: .3;
+  background: $white;
+  box-shadow: 0 0 .875rem rgba(27, 18, 18, .2);
+  width: calc(100vw - rem(90));
+  height: rem(204);
+  transform: scale(100%);
+  max-width: rem(832);
+  margin: 0 auto;
+  user-select: initial;
+
+  img {
+    object-fit: cover;
+  }
+
+  @include breakpoint(sm) {
+    height: rem(446);
+    width: calc(100vw - rem(80));
+  }
+
+  @include breakpoint(lg) {
+    transition: opacity 1.5s, transform 1.5s z-index 1.5s;
+    transform: scale(92%);
+    width: calc(100vw);
+  }
+}
+
+.swiper-controls {
+  margin: 12px auto 0;
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 24px;
+}

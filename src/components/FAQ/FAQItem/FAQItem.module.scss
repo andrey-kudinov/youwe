@@ -1,0 +1,62 @@
+@import '@/styles/base/mixins';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/colors';
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  transition: all ease-in-out .2s;
+}
+
+.question {
+  @include reset-button();
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 16px;
+  transition: background-color ease-in-out .2s, border-color ease-in-out .2s;
+  margin-bottom: 1px;
+  border-bottom: 1px solid transparent;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $concrete;
+  }
+
+  .text {
+    text-align: left;
+    color: $mine-shaft;
+    font-size: 1.3rem;
+  }
+
+  .icon {
+    transition: all ease-in-out .2s;
+
+    svg {
+      fill: $thunder;
+      margin-right: 0;
+    }
+  }
+}
+
+.active {
+  border-color: $black-haze;
+}
+
+.answer {
+  overflow: hidden;
+  transition: all ease-in-out .2s;
+
+  .text {
+    margin: 0;
+    display: block;
+    padding: 16px 16px 24px;
+    color: $mine-shaft;
+  }
+}

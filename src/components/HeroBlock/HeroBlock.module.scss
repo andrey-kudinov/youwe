@@ -1,0 +1,105 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/functions';
+
+.hero-block {
+  --screen-height: 100svh;
+  position: relative;
+  height: calc(var(--screen-height, 100vh) - 6.5rem);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: minmax(auto, 400px) auto;
+  margin-bottom: 86px;
+
+  @include breakpoint(sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    grid-template-rows: auto;
+    height: auto;
+    margin-top: 2rem;
+  }
+
+  @include breakpoint(md) {
+    gap: 48px;
+  }
+}
+
+.content {
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  @include breakpoint(sm) {
+    grid-row: 1 / 2;
+  }
+
+  @include breakpoint(lg) {
+    max-width: 400px;
+  }
+
+  h1 {
+    margin: 0 0 1rem;
+    letter-spacing: -1px;
+    color: $thunder;
+    font-size: rem(32);
+    line-height: 1.2;
+
+    @include breakpoint(sm) {
+      margin-bottom: 1.375rem;
+      font-size: rem(36);
+    }
+
+    @include breakpoint(lg) {
+      font-size: rem(46);
+    }
+  }
+
+  p {
+    color: $mine-shaft;
+    margin: 0 0 1.5rem;
+
+    @include breakpoint(sm) {
+      display: block;
+    }
+
+    @include breakpoint(lg) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  button {
+    width: 100%;
+
+    @include breakpoint(sm) {
+      width: auto;
+    }
+  }
+}
+
+.animationContainer {
+  grid-row: 1 / 2;
+  min-height: 0;
+  position: relative;
+
+  svg {
+    transform: unset !important;
+  }
+}
+
+.frontendAnimation {
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.gridAnimation {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,40 @@
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.wrapper {
+  background-color: $athens-gray;
+  padding-top: 40px;
+
+  @include breakpoint(md) {
+    padding-top: 80px;
+  }
+}
+
+.wrapper-inner {
+  background-color: $concrete;
+}
+
+.content {
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+
+  h2 {
+    margin: 0 0 16px;
+    font-family: var(--galano);
+    font-weight: 400;
+    color: $mine-shaft;
+  }
+
+  p {
+    margin: 0;
+    color: $mine-shaft;
+  }
+
+  @include breakpoint(md) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    flex-direction: row;
+  }
+}

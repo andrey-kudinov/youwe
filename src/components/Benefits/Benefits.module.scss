@@ -1,0 +1,107 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/functions';
+
+.wrapper {
+  background: $thunder;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: $white;
+}
+
+.heading {
+  color: $white;
+  margin: 0;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin: 0 auto;
+  max-width: 450px;
+  padding: 0 8px;
+
+  @include breakpoint(sm) {
+    padding: 0;
+  }
+
+  @include breakpoint(md) {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  svg {
+    flex-shrink: 0;
+    margin-right: 16px;
+    align-self: start;
+
+    path {
+      fill: $white;
+
+      &:last-child {
+        opacity: 0;
+      }
+    }
+  }
+
+  span {
+    color: $white;
+    margin: 0;
+    align-self: start;
+  }
+
+  .visible & {
+    path {
+      &:last-child {
+        animation: checkmark 300ms ease-out;
+        animation-fill-mode: both;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 9 {
+  .checkbox:nth-child(#{$i}) {
+    path {
+      &:last-child {
+        animation-delay: 300ms * $i;
+      }
+    }
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    opacity: 0;
+
+    // transform: scale(0.6);
+    // transform: translateX(100%);
+    // width: 0;
+    transform: scaleX(0);
+  }
+
+  75% {
+    // transform: scale(3);
+  }
+
+  100% {
+    transform: scaleX(1);
+
+    // transform: translateX(0);
+    // transform: scale(1);
+    opacity: 1;
+  }
+}

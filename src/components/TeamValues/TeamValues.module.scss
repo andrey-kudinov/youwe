@@ -1,0 +1,94 @@
+@import '@/styles/base/mixins';
+@import '@/styles/base/colors';
+@import '@/styles/base/functions';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/typography';
+
+.team-values {
+  margin: 0;
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+  background-color: $thunder;
+
+  @include breakpoint(xl) {
+    padding-bottom: rem(120);
+  }
+}
+
+.container {
+  margin-bottom: 0;
+
+  @include breakpoint(xl) {
+    padding-left: rem(75);
+    padding-right: rem(75);
+  }
+}
+
+.header {
+  margin-bottom: rem(40);
+
+  @include breakpoint(lg) {
+    margin-bottom: rem(80);
+  }
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  color: $white;
+}
+
+.list {
+  @include reset-list();
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: rem(22);
+
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: rem(15);
+  }
+
+  @include breakpoint(xl) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: rem(46);
+  }
+}
+
+.item {
+  border-top: 1px solid $scorpion;
+
+  &:nth-last-of-type(1),
+  &:nth-last-of-type(2) {
+    border-bottom: 1px solid $scorpion;
+  }
+
+  @include breakpoint(lg) {
+    &:nth-last-of-type(3),
+    &:nth-last-of-type(4) {
+      border-bottom: 1px solid $scorpion;
+    }
+  }
+}
+
+.value {
+  display: block;
+  padding-top: rem(28);
+  padding-bottom: rem(28);
+  font-family: var(--galano);
+  font-size: rem(14);
+  line-height: rem(16);
+  color: $white;
+
+  @include breakpoint(lg) {
+    font-size: rem(22);
+    line-height: rem(26);
+  }
+
+  @include breakpoint(xl) {
+    font-family: var(--galano);
+    font-weight: 600;
+    font-size: rem(26);
+    line-height: rem(30);
+  }
+}

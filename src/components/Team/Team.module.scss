@@ -1,0 +1,208 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/mixins';
+@import '@/styles/base/functions';
+
+.team {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin: 5rem 0 0 -50vw;
+  padding: 5rem 0;
+  background: $thunder;
+
+  > div {
+    margin: 0 auto;
+  }
+}
+
+.title {
+  max-width: rem(480);
+  margin: 0 auto 2.5rem;
+  padding: 0 2rem;
+  text-align: center;
+  color: $white;
+  font-weight: 100;
+
+  @include breakpoint(sm) {
+    max-width: rem(720);
+  }
+
+  @include breakpoint(lg) {
+    margin-bottom: 5rem;
+  }
+}
+
+.slider {
+  max-width: rem(1440);
+
+  @include breakpoint(sm) {
+    > div {
+      margin-bottom: 0;
+    }
+  }
+
+  > div {
+    margin-bottom: 3rem;
+  }
+}
+
+.slide {
+  padding: 0 rem(6);
+
+  @include breakpoint(xs) {
+    padding: 0 rem(12);
+  }
+
+  @include breakpoint(md) {
+    padding: 0 rem(22);
+  }
+
+  @include breakpoint(md) {
+    padding: 0 rem(40);
+  }
+}
+
+.image {
+  img {
+    height: rem(365);
+    object-fit: cover;
+  }
+}
+
+.name {
+  margin: rem(28) 0 rem(6);
+  color: $white;
+
+  @include breakpoint(md) {
+    line-height: 2.5rem;
+  }
+}
+
+.position {
+  margin: 0;
+  color: $nobel;
+}
+
+.slider-bar {
+  bottom: -2rem;
+
+  @include breakpoint(xs) {
+    bottom: -4rem;
+  }
+
+  @include breakpoint(md) {
+    bottom: -3rem;
+  }
+
+  li {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 .188rem;
+  }
+}
+
+.slick-dot {
+  display: block;
+  width: .5rem;
+  height: .5rem;
+  transition: background-color 1s;
+  background-color: $nobel;
+}
+
+.slick-active {
+  position: relative;
+  top: .188rem;
+  width: .875rem;
+  height: .875rem;
+  background-color: $thunder;
+}
+
+.custom-slick-prev,
+.custom-slick-next {
+  z-index: 1;
+  top: 112%;
+  width: 2.875rem;
+  height: 2.875rem;
+  transition: background .3s;
+  background: $white;
+  box-shadow: 0 0 .875rem rgba(27, 18, 18, .2);
+
+  @include breakpoint(xs) {
+    top: 118%;
+  }
+
+  @include breakpoint(sm) {
+    top: 36%;
+  }
+
+  &::before {
+    content: none;
+    color: $thunder;
+    background: $white;
+  }
+
+  @include outline();
+
+  &:focus {
+    background: $white;
+  }
+
+  &:focus-visible {
+    background: $thunder;
+
+    svg {
+      path {
+        fill: $white;
+        transition: fill .3s;
+      }
+    }
+  }
+
+  &:hover {
+    background: $white;
+
+    svg {
+      path {
+        fill: $thunder;
+      }
+    }
+  }
+
+  @include breakpoint(sm) {
+    &:hover {
+      background: $thunder;
+
+      svg {
+        path {
+          fill: $white;
+          transition: fill .3s;
+        }
+      }
+    }
+  }
+}
+
+.custom-slick-prev {
+  left: calc(50% - 4rem);
+
+  @include breakpoint(sm) {
+    left: 10%;
+  }
+
+  @include breakpoint(xl) {
+    left: 23%;
+  }
+}
+
+.custom-slick-next {
+  right: calc(50% - 4rem);
+
+  @include breakpoint(sm) {
+    right: 10%;
+  }
+
+  @include breakpoint(xl) {
+    right: 23%;
+  }
+}

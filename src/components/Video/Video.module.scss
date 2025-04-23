@@ -1,0 +1,7 @@
+.video {
+  clip-path: inset(1px 1px);
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,54 @@
+@import '@/styles/base/mixins';
+@import '@/styles/base/colors';
+@import '@/styles/base/typography';
+
+.list {
+  @include reset-list();
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.filter {
+  position: relative;
+  padding: 0 1.6rem;
+  font-size: 1rem;
+  line-height: 2.3125rem;
+  color: $gray;
+  background-color: $black-haze;
+  border: none;
+  transition: .3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+    background-color: $blue-ribbon;
+
+    .number {
+      color: $white;
+    }
+  }
+}
+
+.current {
+  color: $white;
+  background-color: $blue-ribbon;
+
+  .number {
+    color: $white;
+  }
+}
+
+.name {
+  font-family: var(--galano);
+  font-weight: 700;
+}
+
+.number {
+  position: absolute;
+  top: .3rem;
+  right: .25rem;
+  color: $gray;
+  transition: .3s ease;
+}

@@ -1,0 +1,59 @@
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.wrapper {
+  background-color: $athens-gray;
+  padding-top: 40px;
+
+  @include breakpoint(lg) {
+    padding-top: 70px;
+  }
+}
+
+.wrapper-inner {
+  background: linear-gradient(126.37deg, rgba(71, 68, 253, .8) 0%, rgba(202, 99, 148, .8) 119.71%);
+}
+
+.content {
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @include breakpoint(lg) {
+    padding-top: 166px;
+    padding-bottom: 166px;
+  }
+
+  h5 {
+    font-size: rem(16);
+    line-height: rem(19);
+    padding-top: 16px;
+    margin: 0;
+    color: $white;
+    font-family: var(--galano);
+    font-weight: 700;
+    text-align: end;
+
+    @include breakpoint(lg) {
+      font-size: rem(16);
+      line-height: rem(19);
+    }
+  }
+
+  p {
+    font-size: rem(26);
+    line-height: rem(30);
+    margin: 0;
+    color: $white;
+    font-family: var(--galano);
+
+    @include breakpoint(lg) {
+      font-size: rem(36);
+      line-height: rem(43);
+    }
+  }
+
+  @include breakpoint(md) {
+    flex-direction: row;
+  }
+}

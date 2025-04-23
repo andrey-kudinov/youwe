@@ -1,0 +1,468 @@
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/colors';
+@import '@/styles/base/mixins';
+@import '@/styles/base/functions';
+
+$transition-ease: .3s ease;
+$transition-transform: transform .5s ease;
+$delay-show-menu: .3s;
+
+.header {
+  position: relative;
+  background-color: transparent;
+}
+
+.logo {
+  z-index: 5;
+  transition: $transition-ease;
+
+  @include outline();
+
+  img {
+    &:first-child {
+      display: none;
+    }
+
+    &:last-child {
+      display: block;
+    }
+
+    @include breakpoint(lg) {
+      &:first-child {
+        display: block;
+      }
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: rem(10) 1.5rem;
+
+  @include breakpoint(lg) {
+    padding: 1rem rem(32);
+  }
+
+  @include breakpoint(xl) {
+    padding: 1rem rem(64);
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.cta {
+  display: none;
+
+  @include breakpoint(lg) {
+    display: block;
+
+    button {
+      height: 100%;
+    }
+  }
+}
+
+.nav-inner {
+  display: none;
+  align-items: center;
+  flex-direction: row;
+  margin: 0;
+  padding-right: 1.17rem;
+  list-style: none;
+
+  @include breakpoint(lg) {
+    display: flex;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+
+    > a {
+      display: flex;
+      align-items: center;
+
+      span {
+        position: relative;
+      }
+    }
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+
+  @include reset-button();
+
+  span {
+    margin-right: rem(5);
+  }
+}
+
+.link,
+.dropdown-link {
+  padding: 1rem 1.5rem;
+
+  @include outline();
+
+  span {
+    position: relative;
+    display: block;
+    padding: 1.5rem 1rem;
+    transition: $transition-ease;
+
+    @include outline();
+
+    @include breakpoint(sm) {
+      padding: 0;
+    }
+
+    &::after,
+    &::before {
+      position: absolute;
+      bottom: -15%;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      content: '';
+      background: $blue-ribbon;
+      transition: .3s ease;
+    }
+  }
+}
+
+.item {
+  &:hover,
+  &:focus-within {
+    .link,
+    .dropdown-link {
+      & > span {
+        color: $blue-ribbon;
+
+        &::after,
+        &::before {
+          width: 50%;
+        }
+
+        &::after {
+          left: 50%;
+        }
+
+        &::before {
+          left: 5%;
+        }
+      }
+    }
+
+    .dropdown-icon {
+      transition: all ease-in-out .2s;
+
+      svg {
+        display: block;
+
+        path {
+          fill: $blue-ribbon;
+        }
+      }
+    }
+  }
+
+  > svg {
+    display: block;
+    position: relative;
+    right: 3rem;
+
+    svg {
+      path {
+        fill: $blue-ribbon;
+      }
+    }
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+.dropdown-icon {
+  svg {
+    display: block;
+    position: relative;
+
+    path {
+      fill: $thunder;
+    }
+  }
+}
+
+.has--current-dropdown-link {
+  .dropdown-link span {
+    color: $blue-ribbon;
+
+    &::after,
+    &::before {
+      width: 50%;
+    }
+
+    &::after {
+      left: 50%;
+    }
+
+    &::before {
+      left: 5%;
+    }
+  }
+
+  .dropdown-icon {
+    transition: all ease-in-out .2s;
+
+    svg {
+      display: block;
+
+      path {
+        fill: $blue-ribbon;
+      }
+    }
+  }
+}
+
+.has-dropdown {
+  .dropdown-icon {
+    transform: rotate(-180deg);
+    transition: all ease-in-out .4s;
+
+    svg {
+      path {
+        fill: $blue-ribbon;
+      }
+    }
+  }
+}
+
+.has-dropdown.item {
+  .dropdown-link span {
+    color: $blue-ribbon;
+
+    &::after,
+    &::before {
+      width: 50%;
+    }
+
+    &::after {
+      left: 50%;
+    }
+
+    &::before {
+      left: 5%;
+    }
+  }
+}
+
+//
+// Mobile navigation:
+//
+
+.mobile-nav-inner {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 6rem 1.5rem 0;
+  list-style: none;
+  transition: $transition-transform;
+  transform: translateX(200%);
+  background: $thunder;
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: -50%;
+    width: 0;
+    height: 0;
+    padding-right: 1rem;
+    content: '';
+    border-top: 100vh solid $thunder;
+    border-left: 50vw solid transparent;
+  }
+
+  .item {
+    transition: $transition-transform;
+    transition-delay: $delay-show-menu;
+    transform: translateX(200%);
+    border-top: 1px dashed $black-haze;
+
+    a {
+      padding: 1.25rem;
+      display: flex;
+      text-transform: none;
+      color: $thunder;
+      transition: background-color $transition-ease;
+
+      &:hover,
+      &:focus-visible {
+        background-color: $mine-shaft;
+      }
+    }
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+.item.current-link {
+  > a span {
+    position: relative;
+    color: $blue-ribbon;
+
+    &::after,
+    &::before {
+      position: absolute;
+      bottom: -15%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      content: '';
+      background: $blue-ribbon;
+      transition: .3s ease;
+    }
+  }
+
+  svg {
+    path {
+      fill: $blue-ribbon;
+    }
+  }
+}
+
+.current-mobile-link {
+  svg {
+    display: block;
+    margin-right: .5rem;
+  }
+}
+
+.contact {
+  margin-top: 2rem;
+  transition: $transition-transform;
+  transition-delay: $delay-show-menu;
+  transform: translateX(200%);
+  z-index: 2;
+
+  button {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.toggle {
+  display: none;
+  padding: 1.1rem .5rem;
+
+  @include outline();
+
+  @include breakpoint(lg, down) {
+    position: relative;
+    z-index: 4;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    transition: $transition-ease;
+    transform: rotate(0deg);
+    border: none;
+    background: transparent;
+  }
+}
+
+.burger {
+  position: relative;
+  display: block;
+  width: 1.5rem;
+  height: .5rem;
+}
+
+.top-bar,
+.bottom-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2px;
+  transition: $transition-ease;
+  transition-delay: 0s;
+  background: $thunder;
+}
+
+.top-bar {
+  transform: translateY(0) rotate(0deg);
+}
+
+.bottom-bar {
+  transform: translateY(6px) rotate(0deg);
+}
+
+.active {
+  .mobile-nav-inner {
+    transform: translateX(0);
+    background: $thunder;
+  }
+
+  .item {
+    transform: translateX(0);
+  }
+
+  .contact {
+    transform: translateX(0);
+  }
+
+  .toggle {
+    transform: rotate(90deg);
+  }
+
+  .top-bar,
+  .bottom-bar {
+    transition: $transition-ease;
+    background: $white;
+  }
+
+  .top-bar {
+    transform: translateY(2px) rotate(45deg);
+  }
+
+  .bottom-bar {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+.closing {
+  .item,
+  .contact {
+    opacity: 0;
+  }
+}

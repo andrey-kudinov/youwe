@@ -1,0 +1,152 @@
+@import '@/styles/base/mixins';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/colors';
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.wrapper {
+  position: relative;
+  background: $athens-gray;
+}
+
+.header {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 40px;
+
+  @include breakpoint(md) {
+    margin-bottom: 48px;
+  }
+
+  @include breakpoint(xl) {
+    margin-bottom: 60px;
+  }
+}
+
+.heading {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.filter {
+  padding: 0 1.5rem .5rem;
+  margin-bottom: 40px;
+  border-bottom: 1px solid $mine-shaft;
+
+  @include breakpoint(md) {
+    margin-bottom: 40px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.card {
+  padding: 24px;
+  background: $white;
+  box-shadow: 0 0 .875rem rgba(27, 18, 18, .2);
+
+  &:last-of-type {
+    margin-bottom: 3rem;
+  }
+
+  @include breakpoint(sm) {
+    padding: 28px 48px 48px;
+  }
+
+  @include breakpoint(lg) {
+    padding: 32px 60px 60px;
+  }
+}
+
+.coverImage {
+  position: relative;
+  padding-top: 80%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.client {
+  padding: 0 1.5rem .1rem;
+  margin: 0 0 32px;
+  border-bottom: 1px solid $nobel;
+
+  @include breakpoint(md) {
+    padding: 0;
+    margin-bottom: 1.75rem;
+  }
+
+  img {
+    width: auto;
+    height: 36px;
+  }
+}
+
+.technologies {
+  @include breakpoint(md) {
+    padding: 0;
+  }
+}
+
+.description {
+  color: $scorpion;
+}
+
+.cardBody {
+  display: grid;
+  gap: 32px;
+
+  @include breakpoint(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cardReverse {
+  @include breakpoint(lg) {
+    .coverImage {
+      order: 2;
+    }
+  }
+}
+
+.link {
+  display: block;
+  text-align: center;
+  text-transform: none;
+  color: $blue-ribbon;
+  transition: .3s ease;
+  padding: 8px 0;
+
+  &:hover,
+  &:focus-visible {
+    color: $thunder;
+  }
+
+  @include breakpoint(md) {
+    text-align: left;
+  }
+}
+
+.footer {
+  text-align: center;
+
+  button {
+    display: inline-flex;
+
+    svg {
+      margin-left: rem(10) !important;
+    }
+  }
+}

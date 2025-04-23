@@ -1,0 +1,116 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/mixins';
+@import '@/styles/base/functions';
+
+$shift-arrow: .25rem;
+
+.service-cards {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid $nobel;
+  max-width: rem(325);
+  align-items: flex-start;
+
+  // @include breakpoint(sm) {
+  //   text-align: initial;
+  // }
+
+  &:hover,
+  &:focus-visible {
+    @include breakpoint(sm) {
+      box-shadow: -.375rem .5px 1.25rem rgba(27, 18, 18, .1);
+      cursor: pointer;
+    }
+
+    .link {
+      color: $thunder;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    .description::after {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      content: '';
+      background: $thunder;
+    }
+  }
+
+  @include outline();
+
+  &:active {
+    color: $blue-ribbon;
+  }
+}
+
+.title {
+  margin: 0 auto 48px;
+  text-align: center;
+
+  @include breakpoint(sm) {
+    max-width: 600px;
+    margin-bottom: 3.625rem;
+  }
+}
+
+.card-title {
+  margin: 32px 0 24px;
+}
+
+.description {
+  position: relative;
+  margin: 0;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  color: $scorpion;
+  border-bottom: 1px solid $nobel;
+  flex-grow: 1;
+
+  &::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    content: '';
+    transition: .3s ease;
+  }
+}
+
+.service-icon {
+  align-self: center;
+}
+
+.link {
+  width: 100%;
+  margin-bottom: 16px;
+  transition: .3s ease;
+  color: $blue-ribbon;
+  text-transform: capitalize;
+
+  @include breakpoint(sm) {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+
+    &::after {
+      display: none;
+    }
+  }
+}

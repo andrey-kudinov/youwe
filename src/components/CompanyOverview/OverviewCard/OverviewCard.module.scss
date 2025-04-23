@@ -1,0 +1,48 @@
+@import '@/styles/base/mixins';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/colors';
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: rem(500);
+  margin: 0 auto;
+  text-align: center;
+
+  @include breakpoint(md) {
+    align-items: flex-start;
+    width: rem(350);
+    text-align: left;
+  }
+
+  a {
+    justify-content: flex-start;
+
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.title {
+  margin: 0 0 rem(28);
+}
+
+.illustration {
+  order: -1;
+  margin: 0 0 rem(32);
+  width: rem(136);
+  height: rem(125);
+
+  @include breakpoint(lg) {
+    width: rem(145);
+  }
+}
+
+.description {
+  margin: 0 0 rem(52);
+  color: $scorpion;
+}

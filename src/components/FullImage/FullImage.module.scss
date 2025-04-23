@@ -1,0 +1,26 @@
+@import '@/styles/base/typography';
+@import '@/styles/base/functions';
+
+.wrapper {
+  background-color: $athens-gray;
+}
+
+.image {
+  padding-bottom: 40px;
+
+  img {
+    max-height: rem(202);
+
+    @include breakpoint(sm) {
+      max-height: rem(404);
+    }
+
+    @include breakpoint(md) {
+      max-height: rem(610);
+    }
+  }
+
+  @include breakpoint(md) {
+    padding-bottom: 74px;
+  }
+}

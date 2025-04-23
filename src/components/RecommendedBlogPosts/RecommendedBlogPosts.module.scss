@@ -1,0 +1,68 @@
+@import '@/styles/base/colors';
+@import '@/styles/base/breakpoints';
+@import '@/styles/base/functions';
+@import '@/styles/base/typography';
+
+.section {
+  background-color: $athens-gray;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.heading {
+  margin: 0;
+  font-weight: 700;
+  font-size: rem(17);
+}
+
+.mobile {
+  @include breakpoint(md) {
+    display: none;
+  }
+}
+
+.mobile {
+  a:not(:last-of-type) {
+    display: block;
+    margin-bottom: 80px;
+  }
+}
+
+.tablet {
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px;
+  border-top: 1px solid $scorpion;
+  cursor: pointer;
+}
+
+.title {
+  margin: 28px 0 12px;
+  font-family: var(--galano);
+  font-weight: 600;
+  font-size: rem(26);
+  color: $thunder;
+}
+
+.paragraph {
+  margin: 0;
+  margin-bottom: 32px;
+  font-family: var(--open-sans);
+  font-size: rem(17);
+  line-height: 1.5;
+  color: $mine-shaft;
+}
