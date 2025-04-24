@@ -177,7 +177,7 @@ export const Header = () => {
           )}
 
           <div className={styles.cta} onClick={handleContact}>
-            <Button title="Напиши нам" variant="secondary" />
+            <Button title="Напиши нам" variant="outlined" />
           </div>
 
           <button

@@ -41,8 +41,8 @@ const Home = ({ clients, heroBlock }: IProps) => {
         videoLink={videoLink}
         selector={selector}
       /> */}
-      <Clients title={clientsData.title} clients={clients} />
       <ServiceCards />
+      <Clients title={clientsData.title} clients={clients} />
       <Portfolio title={portfolio.title} />
       <TechStack />
       {/* <Contact /> */}

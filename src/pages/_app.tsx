@@ -66,12 +66,13 @@ const galano = localFont({
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const canonicalUrl = (
-    `https://${process.env.NEXT_PUBLIC_CANONICAL_DOMAIN || 'avalon.au'}` + (router.asPath === '/' ? '' : router.asPath)
+    `https://${process.env.NEXT_PUBLIC_CANONICAL_DOMAIN || 'youwe-mental.ru'}` +
+    (router.asPath === '/' ? '' : router.asPath)
   ).split('?')[0];
 
   return (
     <>
-      <Script id="google-tag-manager" strategy="afterInteractive">
+      {/* <Script id="google-tag-manager" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -79,28 +80,28 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_CONTAINER}');
         `}
-      </Script>
+      </Script> */}
       <Head>
         <meta content="website" property="og:type" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta content="/og-image.png" property="og:image" />
-        <meta content="Avalon Innovations - Digital agency - logo" property="og:image:alt" />
+        <meta content="/logo.jpg" property="og:image" />
+        <meta content="Психическое здоровье - логотип проекта" property="og:image:alt" />
         <meta name="google-site-verification" content={`${process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION}`} />
-        <meta property="og:title" content="Avalon Innovations // Digital Agency" />
+        <meta property="og:title" content="YOUWE // Поддержка психического здоровья" />
         <meta
           property="og:description"
-          content="Avalon Innovations is a digital agency from Brisbane. We thrive at the intersection of innovative technology and and providing exceptional service. We help you share your story, empowering you to create unique digital experiences."
+          content="Профессиональная помощь при стрессе, тревоге и эмоциональном выгорании. Научно обоснованные методики и безопасное пространство для заботы о психическом здоровье."
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="627" />
-        <meta content="Avalon Innovations" property="og:site_name"></meta>
+        <meta content="YOUWE" property="og:site_name"></meta>
         <meta
-          content="Avalon Innovations is a digital agency from Brisbane. We thrive at the intersection of innovative technology and and providing exceptional service. We help you share your story, empowering you to create unique digital experiences."
+          content="Онлайн-ресурс для поддержки психического здоровья. Практики самопомощи, профессиональные консультации и сообщество поддержки при стрессе, тревоге и выгорании."
           name="description"
         />
-        <meta content="#110c11" name="msapplication-TileColor" />
-        <meta content="#110c11" name="theme-color" />
-        <title>Avalon Innovations // Digital agency</title>
+        <meta content="#0798b3" name="msapplication-TileColor" />
+        <meta content="#0798b3" name="theme-color" />
+        <title>YOUWE // Поддержка психического здоровья</title>
         <link rel="canonical" href={canonicalUrl} />
       </Head>
       <style jsx global>{`

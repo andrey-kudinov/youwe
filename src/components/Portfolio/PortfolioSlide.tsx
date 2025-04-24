@@ -21,7 +21,7 @@ export const PortfolioSlide = (props: IProps) => {
       </div>
 
       <div className={styles['slide-body']}>
-        <Image src={image} alt={image} width="0" height="0" sizes="100vw" quality={50} />
+        <Image src={image} alt={image} width="0" height="0" sizes="100vw" unoptimized />
 
         <div className={styles.info}>
           <h3 className={classNames(styles.heading, 'headline4')} aria-hidden={!isActive}>
