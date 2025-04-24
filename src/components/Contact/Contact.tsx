@@ -14,10 +14,10 @@ export const Contact = ({ bg = 'grey' }: IProps) => (
     <div className={`${styles.contact} container contact-form`}>
       <div>
         <Letters width="80px" />
-        <h2 className={`${styles.title} display2`}>Let ideas become a reality</h2>
-        <p className={`subheadline2 ${styles.subtitle}`}>Working hours:</p>
+        <h2 className={`${styles.title} display2`}>Забота о психике - это реальность</h2>
+        <p className={`subheadline2 ${styles.subtitle}`}>Мы доступны для вас:</p>
         <p className={`paragraph2 ${styles.time}`}>
-          Mon-Fri <span>8am-8pm [GMT +10]</span>
+          Ежедневно, <span>круглосуточно</span>
         </p>
       </div>
 

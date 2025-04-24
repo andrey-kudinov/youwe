@@ -140,7 +140,7 @@ $delay-show-menu: .3s;
       width: 0;
       height: 1px;
       content: '';
-      background: $blue-ribbon;
+      background: $primary;
       transition: .3s ease;
     }
   }
@@ -152,7 +152,7 @@ $delay-show-menu: .3s;
     .link,
     .dropdown-link {
       & > span {
-        color: $blue-ribbon;
+        color: $primary;
 
         &::after,
         &::before {
@@ -176,7 +176,7 @@ $delay-show-menu: .3s;
         display: block;
 
         path {
-          fill: $blue-ribbon;
+          fill: $primary;
         }
       }
     }
@@ -189,7 +189,7 @@ $delay-show-menu: .3s;
 
     svg {
       path {
-        fill: $blue-ribbon;
+        fill: $primary;
       }
     }
   }
@@ -212,7 +212,7 @@ $delay-show-menu: .3s;
 
 .has--current-dropdown-link {
   .dropdown-link span {
-    color: $blue-ribbon;
+    color: $primary;
 
     &::after,
     &::before {
@@ -235,7 +235,7 @@ $delay-show-menu: .3s;
       display: block;
 
       path {
-        fill: $blue-ribbon;
+        fill: $primary;
       }
     }
   }
@@ -248,7 +248,7 @@ $delay-show-menu: .3s;
 
     svg {
       path {
-        fill: $blue-ribbon;
+        fill: $primary;
       }
     }
   }
@@ -256,7 +256,7 @@ $delay-show-menu: .3s;
 
 .has-dropdown.item {
   .dropdown-link span {
-    color: $blue-ribbon;
+    color: $primary;
 
     &::after,
     &::before {
@@ -291,7 +291,7 @@ $delay-show-menu: .3s;
   list-style: none;
   transition: $transition-transform;
   transform: translateX(200%);
-  background: $thunder;
+  background: $primary;
 
   @include breakpoint(lg) {
     display: none;
@@ -306,7 +306,7 @@ $delay-show-menu: .3s;
     height: 0;
     padding-right: 1rem;
     content: '';
-    border-top: 100vh solid $thunder;
+    border-top: 100vh solid $primary;
     border-left: 50vw solid transparent;
   }
 
@@ -338,7 +338,7 @@ $delay-show-menu: .3s;
 .item.current-link {
   > a span {
     position: relative;
-    color: $blue-ribbon;
+    color: $primary;
 
     &::after,
     &::before {
@@ -349,14 +349,14 @@ $delay-show-menu: .3s;
       width: 100%;
       height: 1px;
       content: '';
-      background: $blue-ribbon;
+      background: $primary;
       transition: .3s ease;
     }
   }
 
   svg {
     path {
-      fill: $blue-ribbon;
+      fill: $primary;
     }
   }
 }
@@ -430,7 +430,7 @@ $delay-show-menu: .3s;
 .active {
   .mobile-nav-inner {
     transform: translateX(0);
-    background: $thunder;
+    background: $primary;
   }
 
   .item {

@@ -19,33 +19,51 @@
 
   &.primary {
     padding: 1rem 1.5rem;
-    border: 2px solid $blue-ribbon;
-    background: $blue-ribbon;
+    border: 2px solid $primary;
+    background: $primary;
     font-size: 1.125rem;
 
     &:hover,
     &:focus-visible {
-      color: $blue-ribbon;
+      color: $primary;
       background: transparent;
 
       path {
-        fill: $blue-ribbon;
+        fill: $primary;
       }
     }
   }
 
   &.secondary {
     padding: .625rem .75rem;
-    border: 2px solid $thunder;
-    background: $thunder;
+    border: 2px solid $primary;
+    color: $primary;
+    background: transparent;
 
     &:hover,
     &:focus-visible {
-      color: $thunder;
-      background: transparent;
+      color: $bg;
+      background: $primary;
 
       path {
-        fill: $thunder;
+        fill: $secondary;
+      }
+    }
+  }
+
+  &.outlined {
+    padding: .625rem .75rem;
+    border: 2px solid $bg;
+    color: $bg;
+    background: transparent;
+
+    &:hover,
+    &:focus-visible {
+      color: $primary;
+      background: $bg;
+
+      path {
+        fill: $primary;
       }
     }
   }

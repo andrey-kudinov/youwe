@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Contact } from '@/components/Contact/Contact';
 import PrivacyPolicy from '@/components/PrivacyPolicy/PrivacyPolicy';
 
-const Work = () => (
+const Privacy = () => (
   <>
     <Head>
       <title>Privacy Policy // Avalon Innovations</title>
@@ -15,4 +15,4 @@ const Work = () => (
   </>
 );
 
-export default Work;
+export default Privacy;

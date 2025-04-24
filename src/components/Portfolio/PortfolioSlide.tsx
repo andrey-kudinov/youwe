@@ -48,7 +48,7 @@ export const PortfolioSlide = (props: IProps) => {
             rel="noreferrer"
             aria-hidden={!isActive}
           >
-            <span>&#60; Visit Website &#47; &#62;</span>
+            <span>&#60; Узнать больше &#47; &#62;</span>
           </a>
         </div>
       </div>

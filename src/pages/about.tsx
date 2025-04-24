@@ -19,7 +19,7 @@ interface IProps {
 
 const About = ({ clients }: IProps) => (
   <>
-    <Head>
+    {/* <Head>
       <title>About Us // Avalon Innovations</title>
     </Head>
 
@@ -34,7 +34,7 @@ const About = ({ clients }: IProps) => (
     <Solutions solutions={solutions.cards} title={solutions.title} subtitle={solutions.subtitle} />
     <WorkProcess slides={workProcess.slides} />
     <Jobs />
-    <Contact />
+    <Contact /> */}
   </>
 );
 

@@ -14,7 +14,7 @@ interface IProps {
   title: string;
   iconName?: string;
   iconToEnd?: boolean;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'outlined';
   submit?: boolean;
   loading?: boolean;
   href?: string;

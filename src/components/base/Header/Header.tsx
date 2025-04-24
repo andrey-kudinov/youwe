@@ -18,20 +18,20 @@ import { useScrollBlock } from '@/hooks/useScrollBlock';
 import { Dropdown } from './Dropdown/Dropdown';
 
 const desktopLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: null },
-  { label: 'Work', href: '/work' },
-  { label: 'About', href: '/about' },
+  { label: 'Главная', href: '/' },
+  // { label: 'Services', href: null },
+  { label: 'Статьи и ресурсы', href: '/resourses' },
+  { label: 'О проекте', href: '/about' },
   // { label: 'Blog', href: '/blog' }, temporarily hide blog
 ];
 
 const mobileLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Front-End Development', href: '/frontend' },
-  { label: 'Back-End Development', href: '/backend' },
-  { label: 'Shopify Plus Integration', href: '/shopify' },
-  { label: 'Work', href: '/work' },
-  { label: 'About', href: '/about' },
+  { label: 'Главная', href: '/' },
+  // { label: 'Front-End Development', href: '/frontend' },
+  // { label: 'Back-End Development', href: '/backend' },
+  // { label: 'Shopify Plus Integration', href: '/shopify' },
+  { label: 'Статьи и ресурсы', href: '/resourses' },
+  { label: 'О проекте', href: '/about' },
   // { label: 'Blog', href: '/blog' }, temporarily hide blog
 ];
 
@@ -105,22 +105,9 @@ export const Header = () => {
       })}
     >
       <div className={`${styles['header-inner']} container`}>
-        <Link
-          href="/"
-          className={styles.logo}
-          ref={logoRef}
-          title="Go to Homepage"
-          aria-label="Avalon Innovations Logo"
-        >
-          <Image src="/logo.svg" alt="Avalon Innovations Logo" width={249} height={46} loader={loader} unoptimized />
-          <Image
-            src="/logo-dark.svg"
-            alt="Avalon Innovations Logo"
-            width={60}
-            height={40}
-            loader={loader}
-            unoptimized
-          />
+        <Link href="/" className={styles.logo} ref={logoRef} title="Go to Homepage" aria-label="YOUWE Logo">
+          <Image src="/logo.jpg" alt="YOUWE Logo" width={70} height={65} loader={loader} unoptimized />
+          <Image src="/logo.jpg" alt="YOUWE Logo" width={60} height={55} loader={loader} unoptimized />
         </Link>
 
         <nav className={styles.nav}>
@@ -183,14 +170,14 @@ export const Header = () => {
                 ))}
 
                 <li className={styles.contact}>
-                  <Button title="Contact Us" iconName="mail" onClick={handleContact} />
+                  <Button title="Напиши нам" variant="outlined" iconName="mail" onClick={handleContact} />
                 </li>
               </>
             </ul>
           )}
 
           <div className={styles.cta} onClick={handleContact}>
-            <Button title="Let's Talk" variant="secondary" />
+            <Button title="Напиши нам" variant="secondary" />
           </div>
 
           <button

@@ -14,64 +14,64 @@ interface Logo {
 // TODO: Convert some of those links to internal links to service pages:
 const DEFAULT_LOGOS: Logo[] = [
   {
-    name: 'React',
-    path: '/tech/react.svg',
-    href: 'https://reactjs.org/',
+    name: 'name',
+    path: '/mental/m1.png',
+    href: '/',
   },
   {
-    name: 'Next.js',
-    path: '/tech/nextjs.svg',
-    href: 'https://nextjs.org/',
+    name: 'name',
+    path: '/mental/m2.png',
+    href: '/',
   },
   {
-    name: 'Shopify',
-    path: '/tech/shopify.svg',
-    href: 'https://www.shopify.com/',
+    name: 'name',
+    path: '/mental/m3.png',
+    href: '/',
   },
   {
-    name: 'Salesforce',
-    path: '/tech/salesforce.svg',
-    href: 'https://www.salesforce.com/',
+    name: 'name',
+    path: '/mental/m4.png',
+    href: '/',
   },
   {
-    name: 'Amazon Web Services',
-    path: '/tech/aws.svg',
-    href: 'https://aws.amazon.com/',
+    name: 'name',
+    path: '/mental/m5.png',
+    href: '/',
   },
   {
-    name: 'Contentful',
-    path: '/tech/contentful.svg',
-    href: 'https://www.contentful.com/',
+    name: 'name',
+    path: '/mental/m6.png',
+    href: '/',
   },
   {
-    name: 'Prismic',
-    path: '/tech/prismic.svg',
-    href: 'https://prismic.io/',
+    name: 'name',
+    path: '/mental/m7.png',
+    href: '/',
   },
   {
-    name: 'Storybook',
-    path: '/tech/storybook.svg',
-    href: 'https://storybook.js.org/',
+    name: 'name',
+    path: '/mental/m8.png',
+    href: '/',
   },
   {
-    name: 'Google Cloud',
-    path: '/tech/google-cloud.svg',
-    href: 'https://cloud.google.com/',
+    name: 'name',
+    path: '/mental/m9.png',
+    href: '/',
   },
   {
-    name: 'Firebase',
-    path: '/tech/firebase.svg',
-    href: 'https://firebase.google.com/',
+    name: 'name',
+    path: '/mental/m10.png',
+    href: '/',
   },
   {
-    name: 'Stripe',
-    path: '/tech/stripe.svg',
-    href: 'https://stripe.com/',
+    name: 'name',
+    path: '/mental/m11.png',
+    href: '/',
   },
   {
-    name: 'Auth0',
-    path: '/tech/auth0.svg',
-    href: 'https://auth0.com/',
+    name: 'name',
+    path: '/mental/m12.png',
+    href: '/',
   },
 ];
 
@@ -91,10 +91,13 @@ export const TechStack = (props: Props) => {
     <section className={`container ${styles.techstack}`}>
       <header className={styles.header}>
         <p className={`${styles.eyebrow} subheadline3 color-subtitle`}>
-          {subheading || 'A solid foundation for your next project'}
+          НАДЕЖНАЯ ОСНОВА ДЛЯ ВАШЕГО ПСИХОЛОГИЧЕСКОГО БЛАГОПОЛУЧИЯ
         </p>
-        <h2 className={`${styles.heading} headline1`}>{heading || 'Our technology stacks above the rest'}</h2>
-        <p className={`${styles.paragraph} paragraph1`}>{introText || DEFAULT_INTRO_TEXT}</p>
+        <h2 className={`${styles.heading} headline1`}>Наши методики — это проверенная база</h2>
+        <p className={`${styles.paragraph} paragraph1`}>
+          Мы тщательно подбираем научно обоснованные подходы для каждого аспекта психического здоровья. Наша команда
+          собрала десятки программ, используя лучшие практики современной психологии.
+        </p>
       </header>
 
       <div className={styles.main}>

@@ -33,11 +33,11 @@ export const Clients = (props: IProps) => {
               .filter(({ logoIcon }) => logoIcon)
               .map(({ logoIcon, name }, index) => (
                 <Link
-                  href="/work"
+                  href="/resourses"
                   key={index}
                   tabIndex={-1}
                   className={styles['client-logo']}
-                  title="Go to our Work"
+                  title="Посмотрите наши статьи"
                   aria-label={name}
                 >
                   <Image

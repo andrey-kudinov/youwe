@@ -89,8 +89,8 @@
     }
 
     .swiper-pagination-bullet-active {
-      background-color: $thunder;
-      border-color: $thunder;
+      background-color: $primary;
+      border-color: $primary;
     }
 
     .swiper-button-prev,
@@ -109,6 +109,11 @@
       align-items: center;
       justify-content: center;
 
+      path {
+        fill: $primary;
+        transition: fill .3s;
+      }
+
       @include breakpoint(lg) {
         position: absolute;
         top: calc(50% - rem(30));
@@ -118,20 +123,19 @@
 
       &::before {
         content: none;
-        color: $thunder;
+        color: $primary;
       }
 
       &:hover,
       &:focus-visible {
         outline: none;
-        color: $thunder;
-        background: $thunder;
+        color: $primary;
+        background: $primary;
         transition: background .3s;
 
         svg {
           path {
-            fill: $white;
-            transition: fill .3s;
+            fill: $bg;
           }
         }
       }
@@ -213,13 +217,13 @@
   cursor: pointer;
   transition: .3s ease;
   text-transform: capitalize;
-  color: $blue-ribbon;
+  color: $primary;
   padding: 8px 0;
 
   &:hover,
   &:focus-visible {
     transition: .3s ease;
-    color: $thunder;
+    color: $primary;
   }
 }
 

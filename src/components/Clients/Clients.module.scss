@@ -6,7 +6,7 @@
 
 .wrapper {
   position: relative;
-  background: $thunder;
+  background: $primary;
   padding: 0;
 }
 
@@ -36,7 +36,6 @@
 .second-line,
 .third-line {
   display: flex;
-
 
   // TODO: Reverse is used to prevent animation getting stuck on
   // iOS safari and chrome. Remove when fixed.

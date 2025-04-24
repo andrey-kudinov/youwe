@@ -19,46 +19,39 @@ import { loader } from '@/helpers/helpers';
 // ];
 
 const pages = [
-  { label: 'Home', href: '/' },
-  { label: 'Work', href: '/work' },
-  { label: 'About us', href: '/about' },
-  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Главная', href: '/' },
+  { label: 'Статьи и ресурсы', href: '/resourses' },
+  { label: 'О нас', href: '/about' },
+  // { label: 'Privacy Policy', href: '/privacy-policy' },
 ];
 
-const services = [
-  { label: 'Frontend Development', href: '/frontend' },
-  { label: 'Backend Development', href: '/backend' },
-  { label: 'Shopify Plus', href: '/shopify' },
-];
+// const services = [
+//   { label: 'Frontend Development', href: '/frontend' },
+//   { label: 'Backend Development', href: '/backend' },
+//   { label: 'Shopify Plus', href: '/shopify' },
+// ];
 
 export const Footer = () => (
   <footer className={styles['footer']}>
     <div className={`${styles['footer-inner']} container`}>
       <div className={styles.top}>
         <Link href="/" className={styles.brand} title="Go to Homepage" aria-label="Avalon Innovations Logo">
-          <Image
-            src="/logo-light.svg"
-            alt="Avalon Innovations Logo"
-            width={345}
-            height={48}
-            loader={loader}
-            unoptimized
-          />
+          <Image src="/logo.jpg" alt="YOUWE Logo" width={90} height={85} loader={loader} unoptimized />
         </Link>
       </div>
       <div className={styles.center}>
         <p className={`paragraph1 ${styles['description']}`}>
-          We build unique web experiences and custom e-commerce solutions for your business.
-          <br />
+          Мы с командой работаем над важным проектом — создаем сайт о ментальном здоровье, который сможет помочь людям
+          справляться со стрессом, тревогой и эмоциональным выгоранием.
         </p>
         <div className={`paragraph1 ${styles.items} ${styles['email']}`}>
-          <p className={`paragraph1 ${styles['item-label']}`}>Email at:</p>
-          <a className={`paragraph1 ${styles.item}`} href="mailto:contact@avalon.au">
-            contact@avalon.au
+          <p className={`paragraph1 ${styles['item-label']}`}>Напиши нам:</p>
+          <a className={`paragraph1 ${styles.item}`} href="mailto:youwe-mental@gmail.com">
+            youwe-mental@gmail.com
           </a>
         </div>
         <div className={`paragraph1 ${styles.items} ${styles['pages']}`}>
-          <p className={`paragraph1 ${styles['item-label']}`}>Links</p>
+          <p className={`paragraph1 ${styles['item-label']}`}>Ссылочки</p>
           {pages.map(({ label, href }, index) => (
             <Link href={href} key={index} className={`paragraph1 ${styles.item}`}>
               {label}
@@ -66,12 +59,12 @@ export const Footer = () => (
           ))}
         </div>
         <div className={`paragraph1 ${styles.items}  ${styles['services']}`}>
-          <p className={`paragraph1 ${styles['item-label']}`}>Services</p>
-          {services.map(({ label, href }, index) => (
+          {/* <p className={`paragraph1 ${styles['item-label']}`}>ServiЪ’ces</p> */}
+          {/* {services.map(({ label, href }, index) => (
             <Link href={href} key={index} className={`paragraph1 ${styles.item}`}>
               {label}
             </Link>
-          ))}
+          ))} */}
         </div>
         {/* temporarily hidden logos */}
         {/* <div className={styles.logos}>
@@ -85,7 +78,7 @@ export const Footer = () => (
         </div> */}
       </div>
       <div className={styles.bottom}>
-        <p className="paragraph2">All rights reserved. 2023.</p>
+        <p className="paragraph2">Все права защищены. Но это не точно. 2025.</p>
         {/* temporarily hidden Privacy Policy and Cookie Policy */}
         {/* <div className={`paragraph2 ${styles['bottom-right']}`}>
           <Link href="/privacy-policy">Privacy Policy</Link>

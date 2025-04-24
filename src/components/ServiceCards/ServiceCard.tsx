@@ -26,11 +26,11 @@ export const ServiceCard = (props: IProps) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <Video className={styles['service-icon']} name={icon} width="145px" height="125px" hover={isHover} />
+      <Video className={styles['service-icon']} name={icon} hover={isHover} />
       <h3 className={`${styles['card-title']} subheadline1`}>{title}</h3>
       <p className={`${styles.description} paragraph1`}>{description}</p>
       <p className={`${styles.link} subheadline2`}>
-        <span className={styles['left-arrow']}>&#60;</span> <span>Read more</span>{' '}
+        <span className={styles['left-arrow']}>&#60;</span> <span>Узнать больше</span>{' '}
         <span className={styles['right-arrow']}>/ &#62;</span>
       </p>
     </Link>

@@ -33,19 +33,19 @@ const Home = ({ clients, heroBlock }: IProps) => {
       <Head>
         <title>Avalon Innovations // Digital Agency</title>
       </Head>
-      <HeroBlock
+      {/* <HeroBlock
         animation="frontend"
         title={title}
         text={text}
         label={label}
         videoLink={videoLink}
         selector={selector}
-      />
+      /> */}
       <Clients title={clientsData.title} clients={clients} />
       <ServiceCards />
       <Portfolio title={portfolio.title} />
       <TechStack />
-      <Contact />
+      {/* <Contact /> */}
     </>
   );
 };

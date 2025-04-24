@@ -5,32 +5,32 @@ import type { ICard } from './ServiceCard';
 
 const cards: ICard[] = [
   {
-    title: 'Front-end development',
-    icon: 'frontend-sm',
+    title: 'ПРОФИЛАКТИКА ВЫГОРАНИЯ',
+    icon: 'mental-2',
     description:
-      'Create websites to meet specific needs of your business that off-the-shelf software can not. We make it secure, faster, and easier to scale.',
-    link: '/frontend',
+      'От повседневного напряжения до эмоционального истощения — научно обоснованные методы восстановления энергии.',
+    link: '/',
   },
   {
-    title: 'Back-end development',
-    icon: 'backend-sm',
+    title: 'ПРАКТИКИ ОСОЗНАННОСТИ',
+    icon: 'mental-1',
     description:
-      'From sending a simple form to processing thousands of concurrent requests - we build reliable services that can do anything you need.',
-    link: '/backend',
+      'Простые и эффективные техники для снижения стресса и тревоги. Наши упражнения помогут вам оставаться в моменте и обрести гармонию.',
+    link: '/',
   },
   {
-    title: 'Shopify development',
-    icon: 'shopify-sm',
+    title: 'НАБОР ДЛЯ ЗАБОТЫ О СЕБЕ',
+    icon: 'mental-3',
     description:
-      'Amazing online shopping experiences and e-commerce integrations with cutting-edge technology and careful attention to detail.',
-    link: '/shopify',
+      'Проверенные инструменты, дневниковые практики и персонализированные рекомендации для бережного отношения к себе.',
+    link: '/',
   },
 ];
 
 export const ServiceCards = () => (
   <section className={`container ${styles['service-cards']}`}>
-    <span className="color-subtitle subheadline3">Custom, secure, scalable</span>
-    <h2 className={`${styles.title} headline1`}>Solutions for your business</h2>
+    <span className="color-subtitle subheadline3">ПОДДЕРЖКА, БЕЗОПАСНОСТЬ, РАЗВИТИЕ</span>
+    <h2 className={`${styles.title} headline1`}>Ваш путь к душевному равновесию</h2>
 
     <div className={styles.cards}>
       {cards.map((card: ICard, index) => (

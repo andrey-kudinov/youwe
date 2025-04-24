@@ -17,7 +17,7 @@ interface IProps {
 export const Portfolio = ({ title }: IProps) => (
   <section className={styles.wrapper}>
     <div className={styles.portfolio}>
-      <h3 className="color-subtitle subheadline3">Cross-functional teams at the core</h3>
+      <h3 className="color-subtitle subheadline3">ЗАБОТА О ПСИХИЧЕСКОМ ЗДОРОВЬЕ</h3>
       <h2 className={classNames(styles.title, 'headline1')}>{title}</h2>
       <div className={styles.slider}>
         <Swiper
@@ -63,7 +63,7 @@ export const Portfolio = ({ title }: IProps) => (
         </div>
       </div>
       <div className={styles.linksContainer}>
-        <Button iconName="arrow-right" title="Go to Portfolio" href="/work" />
+        <Button iconName="arrow-right" title="Посмотерть все материалы" href="/resources" />
       </div>
     </div>
   </section>

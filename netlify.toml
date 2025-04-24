@@ -5,6 +5,8 @@
 
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NETLIFY_USE_YARN_CACHE = "true"
+  YARN_FLAGS = "--frozen-lockfile"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

@@ -6,9 +6,9 @@ export const home = {
     iconMobile: 'main-mobile',
   },
   clients: {
-    title: 'Meet our clients',
+    title: 'Познакомься с нашими материалами',
   },
   portfolio: {
-    title: 'Projects delivered across industries and borders',
+    title: 'НАША ОСНОВА',
   },
 };
