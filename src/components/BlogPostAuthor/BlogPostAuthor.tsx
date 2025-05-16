@@ -18,11 +18,11 @@ export const BlogPostAuthor = ({
   theme = 'bright',
   className,
 }: IProps) => {
-  const formattedDate = new Intl.DateTimeFormat('en-US', {
-    month: 'short',
+  const formattedDate = new Intl.DateTimeFormat('ru-RU', {
+    month: 'long',
     day: 'numeric',
-    timeZone: 'Australia/Sydney',
-  }).format(new Date(publishedAt));
+    // timeZone: 'Australia/Sydney',
+  }).format(publishedAt ? new Date(publishedAt) : new Date());
 
   return (
     <section className={cn(styles.section, theme === 'dark' ? styles.dark : styles.bright, className)}>
@@ -30,8 +30,8 @@ export const BlogPostAuthor = ({
 
       <div className={styles.image}>
         <Image
-          src={urlFor(authorImage).url()}
-          alt={authorImage.caption ?? ''}
+          src={urlFor(authorImage)?.url()}
+          alt={authorImage?.caption ?? ''}
           loader={loader}
           width="0"
           height="0"

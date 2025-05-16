@@ -50,7 +50,7 @@ export const Content = ({ items, visibleItems, loadMore }: IContent) => (
               <BlogPostAuthor post={post} theme="dark" />
             </div>
             <Link href={`/blog/${post.slug.current}`} className={styles.link}>
-              <span>&#60; Read Article &#47; &#62;</span>
+              <span>&#60; Читать статью &#47; &#62;</span>
             </Link>
           </div>
         </div>
@@ -58,7 +58,7 @@ export const Content = ({ items, visibleItems, loadMore }: IContent) => (
     </div>
     {visibleItems < items.length && (
       <div className={styles['button-wrapper']}>
-        <Button iconName="arrow-down" title="Show More" iconToEnd onClick={loadMore} />
+        <Button iconName="arrow-down" title="Показать больше" iconToEnd onClick={loadMore} />
       </div>
     )}
   </>

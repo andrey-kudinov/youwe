@@ -79,6 +79,9 @@ export const Footer = () => (
       </div>
       <div className={styles.bottom}>
         <p className="paragraph2">Все права защищены. Но это не точно. 2025.</p>
+        <p className="paragraph2">
+          Сделано с 🫶 <Link className={styles.link} href="https://github.com/andrey-kudinov">Андреем Кудиновым</Link>.
+        </p>
         {/* temporarily hidden Privacy Policy and Cookie Policy */}
         {/* <div className={`paragraph2 ${styles['bottom-right']}`}>
           <Link href="/privacy-policy">Privacy Policy</Link>

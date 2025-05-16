@@ -59,7 +59,7 @@ export const Article = (props: IProps) => {
       </div>
 
       <div className={cn('container', styles.social)}>
-        <SocialList />
+        {/* <SocialList /> */}
       </div>
     </div>
   );

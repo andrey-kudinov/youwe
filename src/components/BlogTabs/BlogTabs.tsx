@@ -18,7 +18,7 @@ const mergeArrays = (...arrays: string[][]): string[] => {
 };
 
 export const BlogTabs = ({ posts }: IBlogTabs) => {
-  const [activeTab, setActiveTab] = useState('all');
+  const [activeTab, setActiveTab] = useState('все');
   const [items, setItems] = useState(posts);
   const LOAD_MORE_STEP = 2;
   const INIT_LOADED = 2;
@@ -37,7 +37,7 @@ export const BlogTabs = ({ posts }: IBlogTabs) => {
   };
 
   const showAll = () => {
-    setActiveTab('all');
+    setActiveTab('все');
     setVisibleItems(INIT_LOADED);
     setItems(posts);
   };
@@ -46,7 +46,7 @@ export const BlogTabs = ({ posts }: IBlogTabs) => {
     <div className={styles.tabs}>
       <div className={cn(styles['tab-list'], 'container')}>
         <div className={styles['tab-list-inner']}>
-          <HeadingItem category={'all'} activeTab={activeTab} onClickTab={showAll} count={posts.length} />
+          <HeadingItem category={'все'} activeTab={activeTab} onClickTab={showAll} count={posts.length} />
           {categories?.map((category, index) => (
             <HeadingItem
               key={index}

@@ -20,7 +20,7 @@ import { Dropdown } from './Dropdown/Dropdown';
 const desktopLinks = [
   { label: 'Главная', href: '/' },
   // { label: 'Services', href: null },
-  { label: 'Статьи и ресурсы', href: '/resourses' },
+  { label: 'Статьи и ресурсы', href: '/blog' },
   { label: 'О проекте', href: '/about' },
   // { label: 'Blog', href: '/blog' }, temporarily hide blog
 ];
@@ -30,7 +30,7 @@ const mobileLinks = [
   // { label: 'Front-End Development', href: '/frontend' },
   // { label: 'Back-End Development', href: '/backend' },
   // { label: 'Shopify Plus Integration', href: '/shopify' },
-  { label: 'Статьи и ресурсы', href: '/resourses' },
+  { label: 'Статьи и ресурсы', href: '/blog' },
   { label: 'О проекте', href: '/about' },
   // { label: 'Blog', href: '/blog' }, temporarily hide blog
 ];
@@ -169,16 +169,16 @@ export const Header = () => {
                   </li>
                 ))}
 
-                <li className={styles.contact}>
+                {/* <li className={styles.contact}>
                   <Button title="Напиши нам" variant="outlined" iconName="mail" onClick={handleContact} />
-                </li>
+                </li> */}
               </>
             </ul>
           )}
 
-          <div className={styles.cta} onClick={handleContact}>
+          {/* <div className={styles.cta} onClick={handleContact}>
             <Button title="Напиши нам" variant="outlined" />
-          </div>
+          </div> */}
 
           <button
             className={styles.toggle}

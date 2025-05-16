@@ -21,12 +21,12 @@ const Blog = (props: IProps) => {
   return (
     <>
       <Head>
-        <title>Blog // Avalon Innovations</title>
+        <title>СТАТЬИ // YOUWE</title>
       </Head>
 
       <HeroBlock
-        title="Stay Curious"
-        text="Discover stories, thinking, and expertise from writers on any topic. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        title="ПОЗНАВАЙ СЕБЯ"
+        text="Читай статьи и блоги на тему психологии. Забота о психике - это реальность"
         animation="blog"
       />
 
@@ -34,7 +34,7 @@ const Blog = (props: IProps) => {
 
       <BlogTabs posts={posts} />
 
-      <Contact />
+      {/* <Contact /> */}
     </>
   );
 };

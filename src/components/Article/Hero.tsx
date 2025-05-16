@@ -20,7 +20,7 @@ export const Hero = (props: IProps) => {
             <i>
               <ArrowLeft width="14px" height="14px" />
             </i>
-            <span>Back to Blog</span>
+            <span>Обратно к статьям</span>
           </>
         </Link>
 

@@ -39,7 +39,7 @@ export const RecommendedBlogPosts = ({ posts }: IProps) => {
     <section className={cn(styles.section)}>
       <div className="container">
         <header className={styles.header}>
-          <h2 className={cn(styles.heading, 'color-subtitle')}>Also recommended</h2>
+          <h2 className={cn(styles.heading, 'color-subtitle')}>Что ещё почитать</h2>
 
           <div className={styles.tablet}>
             <SliderControl current={currentPage} total={total} theme="dark" />

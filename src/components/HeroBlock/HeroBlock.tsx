@@ -23,7 +23,7 @@ export const HeroBlock = ({ title, text, animation, selector = '.contact-form', 
       <div className={styles.content}>
         <h1 className="display1">{title}</h1>
         <p className="paragraph1">{text}</p>
-        <Button iconName="mail" title={label ?? 'Contact Us'} onClick={handleContact} />
+        {/* <Button iconName="mail" title={label ?? 'Contact Us'} onClick={handleContact} /> */}
       </div>
       <div className={styles.animationContainer}>
         <Video className={styles.frontendAnimation} name={animation} width="100%" autoplay videoLink={videoLink} />

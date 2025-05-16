@@ -31,7 +31,7 @@ const Home = ({ clients, heroBlock }: IProps) => {
   return (
     <>
       <Head>
-        <title>Avalon Innovations // Digital Agency</title>
+        <title>YOUWE // Поддержка психического здоровья</title>
       </Head>
       {/* <HeroBlock
         animation="frontend"
